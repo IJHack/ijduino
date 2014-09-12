@@ -1,6 +1,6 @@
 ##############################################################
 
-ijduino.name=IJduino (ATmega328 on a breadboard 8 MHz internal clock)
+ijduino.name=IJduino (ATmega328 MHz internal)
 
 ijduino.upload.protocol=stk500
 ijduino.upload.maximum_size=30720
