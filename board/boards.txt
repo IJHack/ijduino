@@ -1,0 +1,21 @@
+##############################################################
+
+ijduino.name=IJduino (ATmega328 on a breadboard 8 MHz internal clock)
+
+ijduino.upload.protocol=stk500
+ijduino.upload.maximum_size=30720
+ijduino.upload.speed=57600
+
+ijduino.bootloader.low_fuses=0xE2
+ijduino.bootloader.high_fuses=0xDA
+ijduino.bootloader.extended_fuses=0x05
+ijduino.bootloader.path=arduino:atmega
+ijduino.bootloader.file=ATmegaBOOT_168_atmega328_pro_8MHz.hex
+ijduino.bootloader.unlock_bits=0x3F
+ijduino.bootloader.lock_bits=0x0F
+
+ijduino.build.mcu=atmega328p
+ijduino.build.f_cpu=8000000L
+ijduino.build.core=arduino:arduino
+ijduino.build.variant=arduino:standard
+
