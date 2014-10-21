@@ -24,9 +24,9 @@
 #define	CS_PIN		21  // or SS
 
 // SPI hardware interface
-MD_MAX72XX mx = MD_MAX72XX(CS_PIN, MAX_DEVICES);
+//MD_MAX72XX mx = MD_MAX72XX(CS_PIN, MAX_DEVICES);
 // Arbitrary pins
-//MD_MAX72XX mx = MD_MAX72XX(DATA_PIN, CLK_PIN, CS_PIN, MAX_DEVICES);
+MD_MAX72XX mx = MD_MAX72XX(DATA_PIN, CLK_PIN, CS_PIN, MAX_DEVICES);
 
 // Scrolling parameters
 #if USE_POT_CONTROL
