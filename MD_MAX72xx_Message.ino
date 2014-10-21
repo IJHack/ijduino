@@ -19,9 +19,9 @@
 // need to be adapted
 #define	MAX_DEVICES	1
 
-#define	CLK_PIN		13  // or SCK
-#define	DATA_PIN	11  // or MOSI
-#define	CS_PIN		10  // or SS
+#define	CLK_PIN		5   // or SCK
+#define	DATA_PIN	20  // or MOSI
+#define	CS_PIN		21  // or SS
 
 // SPI hardware interface
 MD_MAX72XX mx = MD_MAX72XX(CS_PIN, MAX_DEVICES);
