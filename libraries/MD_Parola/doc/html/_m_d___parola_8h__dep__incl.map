@@ -1,0 +1,16 @@
+<map id="MD_Parola.h" name="MD_Parola.h">
+<area shape="rect" id="node3" href="$_m_d___parola_8cpp.html" title="Implements core MD_Parola class methods. " alt="" coords="5,80,115,107"/>
+<area shape="rect" id="node5" href="$_m_d___parola___blinds_8cpp.html" title="Implements blinds effect. " alt="" coords="140,80,295,107"/>
+<area shape="rect" id="node7" href="$_m_d___parola___close_8cpp.html" title="Implements closing effect. " alt="" coords="319,80,469,107"/>
+<area shape="rect" id="node9" href="$_m_d___parola___diag_8cpp.html" title="Implements diagonal scroll effect. " alt="" coords="495,80,639,107"/>
+<area shape="rect" id="node11" href="$_m_d___parola___dissolve_8cpp.html" title="Implements dissolve effect. " alt="" coords="663,80,829,107"/>
+<area shape="rect" id="node13" href="$_m_d___parola___grow_8cpp.html" title="Implements grow effects. " alt="" coords="854,80,1001,107"/>
+<area shape="rect" id="node15" href="$_m_d___parola___h_scroll_8cpp.html" title="Implements horizontal scrolling effect. " alt="" coords="1027,80,1187,107"/>
+<area shape="rect" id="node17" href="$_m_d___parola___open_8cpp.html" title="Implements opening effect. " alt="" coords="1211,80,1360,107"/>
+<area shape="rect" id="node19" href="$_m_d___parola___print_8cpp.html" title="Implements static print effect. " alt="" coords="1385,80,1529,107"/>
+<area shape="rect" id="node21" href="$_m_d___parola___scan_8cpp.html" title="Implements scan effect. " alt="" coords="1554,80,1701,107"/>
+<area shape="rect" id="node23" href="$_m_d___parola___slice_8cpp.html" title="Implements slice effect. " alt="" coords="1727,80,1873,107"/>
+<area shape="rect" id="node25" href="$_m_d___parola___v_scroll_8cpp.html" title="Implements vertical scroll effect. " alt="" coords="1897,80,2057,107"/>
+<area shape="rect" id="node27" href="$_m_d___parola___wipe_8cpp.html" title="Implements wipe effect. " alt="" coords="2082,80,2229,107"/>
+<area shape="rect" id="node29" href="$_m_d___p_zone_8cpp.html" title="Implements MD_PZone class methods. " alt="" coords="2254,80,2364,107"/>
+</map>
