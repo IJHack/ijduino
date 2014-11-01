@@ -16,6 +16,6 @@ ijduino.bootloader.lock_bits=0x0F
 
 ijduino.build.mcu=atmega328p
 ijduino.build.f_cpu=8000000L
-ijduino.build.core=arduino:arduino
-ijduino.build.variant=arduino:standard
+ijduino.build.core=arduino
+ijduino.build.variant=ijduino
 
