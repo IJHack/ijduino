@@ -311,11 +311,23 @@ B11100111,
 B01111110,
 B00111100};
 
+   byte logowink3[8]={  
+B11000011,
+B11000011,
+B00000000,
+B00000000,
+B00000000,
+B00000000,
+B00000000,
+B00000000};
+
   for (int i = 1; i < times; i++) {  
     render(logowink0, 500);
     render(logowink1, 500);
     render(logowink0, 500);
     render(logowink2, 500);
+    render(logowink0, 500);
+    render(logowink3, 500);
   }
 }
 
