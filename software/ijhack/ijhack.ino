@@ -68,6 +68,60 @@ B00100100};
   
 }
 
+void invadesquid() {
+   byte invadesquid[8]={
+B00011000,
+B00111100,
+B01111110,
+B11011011,
+B11111111,
+B01011010,
+B10000001,
+B01000010};
+  
+  
+ 
+  lc.setColumn(0,0,invadesquid[7]);
+  lc.setColumn(0,1,invadesquid[6]);
+  lc.setColumn(0,2,invadesquid[5]);
+  lc.setColumn(0,3,invadesquid[4]);
+  lc.setColumn(0,4,invadesquid[3]);
+  lc.setColumn(0,5,invadesquid[2]);
+  lc.setColumn(0,6,invadesquid[1]);
+  lc.setColumn(0,7,invadesquid[0]);
+  delay(delaytime);
+  
+  
+}
+
+void devadesquid() {
+   byte devadesquid[8]={
+B00011000,
+B00111100,
+B01111110,
+B11011011,
+B11111111,
+B00100100,
+B01011010,
+B10100101};
+  
+  
+ 
+  lc.setColumn(0,0,devadesquid[7]);
+  lc.setColumn(0,1,devadesquid[6]);
+  lc.setColumn(0,2,devadesquid[5]);
+  lc.setColumn(0,3,devadesquid[4]);
+  lc.setColumn(0,4,devadesquid[3]);
+  lc.setColumn(0,5,devadesquid[2]);
+  lc.setColumn(0,6,devadesquid[1]);
+  lc.setColumn(0,7,devadesquid[0]);
+  delay(delaytime);
+  
+  
+}
+
+
+
 void ijlogo() {
   /* here is the data for the characters */ 
   byte logowink[8]={
@@ -290,6 +344,16 @@ void loop() {
   devade();
   invade();
   devade();
+  invadesquid();
+  devadesquid();
+  invadesquid();
+  devadesquid();
+  invadesquid();
+  devadesquid();
+  invadesquid();
+  devadesquid();
+  invadesquid();
+  devadesquid();
   ijlogo();
   ijlogowink();
   ijlogo();
