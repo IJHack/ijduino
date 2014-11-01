@@ -413,7 +413,7 @@ B00011000};
 void loop() {
   ijhacklogo();
   delay (1000);
-  ghost(5);
+  ghost(3);
   delay(500);
   invade(5);
   delay (1000);
