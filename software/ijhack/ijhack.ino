@@ -15,6 +15,59 @@ void setup() {
   /* and clear the display */
   lc.clearDisplay(0);
 }
+
+void invade() {
+   byte invade[8]={
+B00100100,
+B00100100,
+B01111110,
+B11011011,
+B11111111,
+B11111111,
+B10100101,
+B00100100};
+  
+  
+ 
+  lc.setColumn(0,0,invade[7]);
+  lc.setColumn(0,1,invade[6]);
+  lc.setColumn(0,2,invade[5]);
+  lc.setColumn(0,3,invade[4]);
+  lc.setColumn(0,4,invade[3]);
+  lc.setColumn(0,5,invade[2]);
+  lc.setColumn(0,6,invade[1]);
+  lc.setColumn(0,7,invade[0]);
+  delay(delaytime);
+  
+  
+}
+
+void devade() {
+   byte devade[8]={
+B00100100,
+B10100101,
+B11111111,
+B11011011,
+B11111111,
+B01111110,
+B00100100,
+B00100100};
+  
+  
+ 
+  lc.setColumn(0,0,devade[7]);
+  lc.setColumn(0,1,devade[6]);
+  lc.setColumn(0,2,devade[5]);
+  lc.setColumn(0,3,devade[4]);
+  lc.setColumn(0,4,devade[3]);
+  lc.setColumn(0,5,devade[2]);
+  lc.setColumn(0,6,devade[1]);
+  lc.setColumn(0,7,devade[0]);
+  delay(delaytime);
+  
+  
+}
+
 void ijlogo() {
   /* here is the data for the characters */ 
   byte logowink[8]={
@@ -227,6 +280,16 @@ delay(delaytime);
 
 
 void loop() { 
+  invade();
+  devade();
+  invade();
+  devade();
+  invade();
+  devade();
+  invade();
+  devade();
+  invade();
+  devade();
   ijlogo();
   ijlogowink();
   ijlogo();
