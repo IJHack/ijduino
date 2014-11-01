@@ -408,6 +408,34 @@ B00011000};
   }
 }
 
+void jumper(int times = 1) {
+byte jumpdown[8]={
+B00111100,
+B00111100,
+B00011000,
+B01111110,
+B00011000,
+B00011000,
+B00100100,
+B00100100};
+
+byte jumpup[8]={
+B00111100,
+B01011010,
+B00111100,
+B00011000,
+B00011000,
+B00100100,
+B01000010,
+B00000000};
+ 
+  for (int i = 1; i < times; i++) {
+    render(jumpdown, 500);
+    render(jumpup, 500);  
+  }
+}
+
+
 
 
 void loop() {
@@ -420,6 +448,8 @@ void loop() {
   heart(4);
   delay (1000);
   invadesquid(5);
+  delay (1000);
+  jumper(5);
   delay (1000);
   ijlogowink(4);
   lc.clearDisplay(0);
