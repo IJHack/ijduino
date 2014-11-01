@@ -328,6 +328,7 @@ B00000000};
     render(logowink2, 500);
     render(logowink0, 500);
     render(logowink3, 500);
+    render(logowink0, 500);
   }
 }
 
@@ -453,17 +454,17 @@ B00000000};
 void loop() {
   ijhacklogo();
   delay (1000);
-  ghost(3);
+  ghost(2);
   delay(500);
-  invade(5);
+  invade(4);
   delay (1000);
   heart(4);
   delay (1000);
-  invadesquid(5);
+  invadesquid(3);
   delay (1000);
-  jumper(5);
+  jumper(4);
   delay (1000);
-  ijlogowink(4);
+  ijlogowink(3);
   lc.clearDisplay(0);
   delay (1000);
   
