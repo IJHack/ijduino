@@ -49,7 +49,7 @@ void anicounting() {
       ijhacklogo();
       break;
     case 1:
-      directions();
+      ghost();
       break;
     case 2:
       invade();
