@@ -18,13 +18,13 @@ LedControl lc=LedControl(20,5,21,1);
 int lowPin = 11;             /* ground pin for the buton ;-) */
 int buttonPin = 9;           /* choose the input pin for the pushbutton */
 
-int animations = 10;
+int animations = 10;         /* the number of animations we have */
 
-int anicount = 0;
-int buttonState = LOW;
 int lastButtonState = LOW;   /* the previous reading from the input pin */
 long lastDebounceTime = 0;   /* the last time the output pin was toggled */
 long debounceDelay = 50;     /* the debounce time; increase if the output flickers */
+int anicount = 0;
+int buttonState = LOW;
 
 void setup() {
   /*
