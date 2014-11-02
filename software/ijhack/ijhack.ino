@@ -2,7 +2,7 @@
 
 LedControl lc=LedControl(20,5,21,1);
 
-int animations = 12;
+int animations = 13;
 
 int lowPin = 11;
 int buttonPin = 9;               // choose the input pin for the pushbutton
@@ -49,7 +49,7 @@ void anicounting() {
       ijhacklogo();
       break;
     case 1:
-      ghost();
+      directions();
       break;
     case 2:
       invade();
@@ -83,6 +83,9 @@ void anicounting() {
       break;
     case 12:
       arrows();
+      break;
+    case 13:
+      directions();
       break;
   }
 }
@@ -1631,5 +1634,140 @@ B00000000};
   render(arrowleft, 200);  
 }
 
+
+void directions() {
+  byte directions1[8]={
+B00000000,
+B00000000,
+B00000000,
+B10000000,
+B00000000,
+B00000000,
+B00000000,
+B00000000};
+
+  byte directions2[8]={
+B00000000,
+B00000000,
+B10000000,
+B01000000,
+B10000000,
+B00000000,
+B00000000,
+B00000000};
+
+  byte directions3[8]={
+B00000000,
+B10000000,
+B01000000,
+B00100000,
+B01000000,
+B10000000,
+B00000000,
+B00000000};
+
+  byte directions4[8]={
+B10000000,
+B01000000,
+B00100000,
+B00010000,
+B00100000,
+B01000000,
+B10000000,
+B00000000};
+
+  byte directions5[8]={
+B01000000,
+B00100000,
+B00010000,
+B00001000,
+B00010000,
+B00100000,
+B01000000,
+B00000000};
+
+  byte directions6[8]={
+B00100000,
+B00010000,
+B00001000,
+B00000100,
+B00001000,
+B00010000,
+B00100000,
+B00000000};
+
+  byte directions7[8]={
+B00010000,
+B00001000,
+B00000100,
+B00000010,
+B00000100,
+B00001000,
+B00010000,
+B00000000};
+
+  byte directions8[8]={
+B00001000,
+B00000100,
+B00000010,
+B00000001,
+B00000010,
+B00000100,
+B00001000,
+B00000000};
+
+  byte directions9[8]={
+B00000100,
+B00000010,
+B00000001,
+B00000000,
+B00000001,
+B00000010,
+B00000100,
+B00000000};
+
+  byte directions10[8]={
+B00000010,
+B00000001,
+B00000000,
+B00000000,
+B00000000,
+B00000001,
+B00000010,
+B00000000};
+
+  byte directions11[8]={
+B00000001,
+B00000000,
+B00000000,
+B00000000,
+B00000000,
+B00000000,
+B00000001,
+B00000000};
+
+  byte directions12[8]={
+B00000000,
+B00000000,
+B00000000,
+B00000000,
+B00000000,
+B00000000,
+B00000000,
+B00000000};
+
+  render(directions1, 200);
+  render(directions2, 200);
+  render(directions3, 200);
+  render(directions4, 200);
+  render(directions5, 200);
+  render(directions6, 200);
+  render(directions7, 200);
+  render(directions8, 200);
+  render(directions9, 200);
+  render(directions10, 200);
+  render(directions11, 200);
+  render(directions12, 200);
+}
 
 
