@@ -18,7 +18,7 @@ LedControl lc=LedControl(20,5,21,1);
 int lowPin = 11;             /* ground pin for the buton ;-) */
 int buttonPin = 9;           /* choose the input pin for the pushbutton */
 
-int animations = 13;         /* the number of animations we have */
+int animations = 14;         /* the number of animations we have */
 
 int lastButtonState = LOW;   /* the previous reading from the input pin */
 long lastDebounceTime = 0;   /* the last time the output pin was toggled */
@@ -86,6 +86,9 @@ void loop() {
     case 13:
       directions();
       break;
+    case 14:
+      packman();
+      break;  
   }
 }
 
@@ -2273,4 +2276,87 @@ B00000000};
   }
   skip = render(directions12, 200);
 }
+void packman() {
+byte packman[8]={
+B00000000,
+B00011100,
+B00111110,
+B01101111,
+B01111000,
+B01111000,
+B00111111,
+B00011110};
 
+byte packman1[8]={
+B00000000,
+B11000000,
+B01100000,
+B11110000,
+B10000000,
+B10000000,
+B11110000,
+B11100000};
+
+byte packman2[8]={
+B00000000,
+B00011100,
+B00111110,
+B01101111,
+B01111000,
+B01111000,
+B00111111,
+B00011110};
+
+byte packman3[8]={
+B00000000,
+B00001111,
+B00011101,
+B00111111,
+B00111100,
+B00011100,
+B00001111,
+B00000111};
+
+  byte packman4[8]={
+B00000000,
+B00000000,
+B00000001,
+B00000011,
+B00000111,
+B00000111,
+B00000011,
+B00000001};
+
+  byte packman5[8]={
+B00000000,
+B00000000,
+B00000000,
+B00000000,
+B00000000,
+B00000000,
+B00000000,
+B00000000};
+
+bool skip;
+  skip = render(packman, 200);
+  if (skip) {
+    return;
+  }
+  skip = render(packman1, 200);  
+  if (skip) {
+    return;
+  }
+  skip = render(packman2, 200);
+  if (skip) {
+    return;
+  }
+  skip = render(packman3, 200);
+  if (skip) {
+    return;
+  }
+  skip = render(packman4, 200);
+  if (skip) {
+    return;
+  }
+  skip = render(packman5, 200);
+}
