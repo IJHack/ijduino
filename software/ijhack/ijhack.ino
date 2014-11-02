@@ -17,7 +17,7 @@ LedControl lc=LedControl(20,5,21,1);
 int lowPin = 11;             /* ground pin for the buton ;-) */
 int buttonPin = 9;           /* choose the input pin for the pushbutton */
 
-int animations = 14;         /* the number of animations we have */
+int animations = 15;         /* the number of animations we have */
 
 int lastButtonState = LOW;   /* the previous reading from the input pin */
 long lastDebounceTime = 0;   /* the last time the output pin was toggled */
