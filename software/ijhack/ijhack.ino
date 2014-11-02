@@ -53,25 +53,25 @@ void anicounting() {
       break;
   }
   if (anicount == 2) {
-    invade(1);
+    invade(3);
   }
   if (anicount == 3) {
-    heart(1);
+    heart(3);
   }
   if (anicount == 4) {
-    invadesquid(1);
+    invadesquid(3);
   }
   if (anicount == 5) {
-    jumper(1);
+    jumper(3);
   }
   if (anicount == 6) {
     ijlogowink(1);
   }
   if (anicount == 7) {
-    heartbeat(1);
+    heartbeat(3);
   }
   if (anicount == 8) {
-    eq(1);
+    eq(4);
   }
 }
 
