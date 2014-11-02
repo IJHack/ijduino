@@ -18,7 +18,7 @@ LedControl lc=LedControl(20,5,21,1);
 int lowPin = 11;             /* ground pin for the buton ;-) */
 int buttonPin = 9;           /* choose the input pin for the pushbutton */
 
-int animations = 13;         /* the number of animations we have */
+int animations = 14;         /* the number of animations we have */
 
 int lastButtonState = LOW;   /* the previous reading from the input pin */
 long lastDebounceTime = 0;   /* the last time the output pin was toggled */
@@ -159,13 +159,13 @@ void loop() {
     case 11:
       pong();
       break;
-    case 11:
+    case 12:
       snake();
       break;
-    case 12:
+    case 13:
       arrows();
       break;
-    case 13:
+    case 14:
       directions();
       break;
   }
@@ -1725,8 +1725,7 @@ B00011101};
   return false;  /* don't skip the rest */
 }
 
-
-void snake() {
+bool snake() {
   byte snake1[8]={
 B00000000,
 B00000000,
@@ -2031,144 +2030,144 @@ B00000000};
   bool skip;
   skip = render(snake1, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake2, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake3, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake4, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake5, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake6, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake7, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake8, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake9, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake10, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake11, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake12, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake13, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake14, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake15, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake16, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake17, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake18, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake19, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake20, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake21, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake22, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake23, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake24, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake25, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake26, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake27, 200);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake28, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake29, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake30, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake29, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake30, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake29, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(snake30, 200);
+  if (skip) {
+    return true;
+  }
+  return false;  /* don't skip the rest */
 }
 
-
-
-
-
-void arrows() {
+bool arrows() {
   byte arrowup[8]={
 B00000000,
 B00011000,
@@ -2213,21 +2212,24 @@ B00000000};
   bool skip;
   skip = render(arrowup, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(arrowright, 200);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(arrowdown, 200);  
   if (skip) {
-    return;
+    return true;
   }
-  skip = render(arrowleft, 200);  
+  skip = render(arrowleft, 200);
+  if (skip) {
+    return true;
+  }
+  return false;  
 }
 
-
-void directions() {
+bool directions() {
   byte directions1[8]={
 B00000000,
 B00000000,
@@ -2351,48 +2353,52 @@ B00000000};
   bool skip;
   skip = render(directions1, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(directions2, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(directions3, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(directions4, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(directions5, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(directions6, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(directions7, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(directions8, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(directions9, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(directions10, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(directions11, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(directions12, 200);
+  if (skip) {
+    return true;
+  }
+  return false;
 }
 
