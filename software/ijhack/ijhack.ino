@@ -4,7 +4,7 @@ LedControl lc=LedControl(20,5,21,1);
 
 int animations = 10;
 
-int pullupPin = 11;
+int lowPin = 11;
 int buttonPin = 9;               // choose the input pin for the pushbutton
 
 int anicount = 0;
@@ -22,8 +22,8 @@ void setup() {
   lc.clearDisplay(0);
   /* setup pins */
   pinMode(buttonPin, INPUT_PULLUP);
-  pinMode(pullupPin, OUTPUT);
-  digitalWrite(pullupPin, LOW);
+  pinMode(lowPin, OUTPUT);
+  digitalWrite(lowPin, LOW);
 }
 
 void loop() {
@@ -49,35 +49,35 @@ void anicounting() {
       ijhacklogo();
       break;
     case 1:
-      ghost(1);
+      ghost();
       break;
-  }
-  if (anicount == 2) {
-    invade(3);
-  }
-  if (anicount == 3) {
-    heart(3);
-  }
-  if (anicount == 4) {
-    invadesquid(3);
-  }
-  if (anicount == 5) {
-    jumper(3);
-  }
-  if (anicount == 6) {
-    ijlogowink(1);
-  }
-  if (anicount == 7) {
-    heartbeat(3);
-  }
-  if (anicount == 8) {
-    eq(3);
-  }
-  if (anicount == 9) {
-    invaderagain(2);
-  }
-  if (anicount == 10) {
-    pong(3);
+    case 2:
+      invade();
+      break;
+    case 3:
+      heart();
+      break;
+    case 4:
+      invadesquid();
+      break;
+    case 5:
+      jumper();
+      break;
+    case 6:
+      ijlogowink();
+      break;
+    case 7:
+      heartbeat();
+      break;
+    case 8:
+      eq();
+      break;
+    case 9:
+      invaderagain();
+      break;
+    case 10:
+      pong();
+      break;
   }
 }
 
@@ -93,7 +93,7 @@ void render(byte* animation, int delaytime) {
   delay(delaytime);
 } 
 
-void invade(uint8_t times) {
+void invade() {
    byte invade[8]={
 B00100100,
 B00100100,
@@ -114,13 +114,11 @@ B01111110,
 B00100100,
 B00100100};
   
-  for (int i = 0; i < times; i++) {
-    render(invade, 500);
-    render(devade, 500);  
-  }
+  render(invade, 500);
+  render(devade, 500);
 }
 
-void invadesquid(int8_t times) {
+void invadesquid() {
    byte invadesquid[8]={
 B00011000,
 B00111100,
@@ -141,13 +139,11 @@ B00100100,
 B01011010,
 B10100101};
 
-  for (int i = 0; i < times; i++) {
-    render(invadesquid, 500);
-    render(devadesquid, 500);  
-  }
+  render(invadesquid, 500);
+  render(devadesquid, 500);  
 }
 
-void ghost(uint8_t times) {
+void ghost() {
 
  byte ghost1[8]={
 B00000000,
@@ -363,44 +359,41 @@ B00000000,
 B00000000,
 B00000000};
 
-  for (int i = 0; i < times; i++) {
-    render(ghost1, 200);
-    render(ghost2, 200);  
-    render(ghost3, 200);
-    render(ghost4, 200);
-    render(ghost5, 200);
-    render(ghost6, 200);
-    render(ghost7, 200);
-    render(ghost8, 200);
-    render(ghost9, 200);
-    render(ghost9a, 200);
-    render(ghost9b, 200);
-    render(ghost9c, 200);
-    render(ghost9d, 200);
-    render(ghost9e, 200);
-    render(ghost9a, 200);
-    render(ghost9b, 200);
-    render(ghost9c, 200);
-    render(ghost9d, 200);
-    render(ghost9e, 200);
-    render(ghost9a, 200);
-    render(ghost9b, 200);
-    render(ghost9c, 200);
-    render(ghost9d, 200);
-    render(ghost9e, 200);
-    render(ghost9, 200);
-    render(ghost10, 200);
-    render(ghost11, 200);
-    render(ghost12, 200);
-    render(ghost13, 200);
-    render(ghost14, 200);
-    render(ghost15, 200);
-    render(ghost16, 200);
-
-  }
+  render(ghost1, 200);
+  render(ghost2, 200);  
+  render(ghost3, 200);
+  render(ghost4, 200);
+  render(ghost5, 200);
+  render(ghost6, 200);
+  render(ghost7, 200);
+  render(ghost8, 200);
+  render(ghost9, 200);
+  render(ghost9a, 200);
+  render(ghost9b, 200);
+  render(ghost9c, 200);
+  render(ghost9d, 200);
+  render(ghost9e, 200);
+  render(ghost9a, 200);
+  render(ghost9b, 200);
+  render(ghost9c, 200);
+  render(ghost9d, 200);
+  render(ghost9e, 200);
+  render(ghost9a, 200);
+  render(ghost9b, 200);
+  render(ghost9c, 200);
+  render(ghost9d, 200);
+  render(ghost9e, 200);
+  render(ghost9, 200);
+  render(ghost10, 200);
+  render(ghost11, 200);
+  render(ghost12, 200);
+  render(ghost13, 200);
+  render(ghost14, 200);
+  render(ghost15, 200);
+  render(ghost16, 200);
 }
 
-void ijlogowink(uint8_t times) {
+void ijlogowink() {
   byte logowink0[8]={
 B11000011,
 B11000011,
@@ -442,14 +435,12 @@ B00000000,
 B00000000,
 B00000000};
 
-  for (int i = 0; i < times; i++) {  
-    render(logowink0, 500);
-    render(logowink1, 500);
-    render(logowink0, 500);
-    render(logowink2, 500);
-    render(logowink0, 500);
-    render(logowink3, 500);
-  }
+  render(logowink0, 500);
+  render(logowink1, 500);
+  render(logowink0, 500);
+  render(logowink2, 500);
+  render(logowink0, 500);
+  render(logowink3, 500);
 }
 
 void ijhacklogo() {
@@ -512,7 +503,7 @@ B11000111
   render(k, 500);
 }
 
-void heart(uint8_t times) {
+void heart() {
   
   /* here is the data for the characters */
   byte heart2[8]={B00000000,
@@ -535,13 +526,11 @@ B01111110,
 B00111100,
 B00011000};
 
-  for (int i = 0; i < times; i++) {
-    render(heart1, 500);
-    render(heart2, 500); 
-  }
+  render(heart1, 500);
+  render(heart2, 500); 
 }
 
-void jumper(uint8_t times) {
+void jumper() {
   byte jumpdown[8]={
 B00111100,
 B00111100,
@@ -561,14 +550,12 @@ B00011000,
 B00100100,
 B01000010,
 B00000000};
- 
-  for (int i = 0; i < times; i++) {
-    render(jumpdown, 500);
-    render(jumpup, 500);  
-  }
+
+  render(jumpdown, 500);
+  render(jumpup, 500);  
 }
 
-void heartbeat(uint8_t times) {
+void heartbeat() {
   byte heart1[8]={
 B00000000,
 B00000100,
@@ -699,27 +686,25 @@ B00101000,
 B00011000,
 B00001000};
 
-for (int i = 0; i < times; i++) {
-    render(heart6, 100);  
-    render(heart6, 100);  
-    render(heart7, 100);  
-    render(heart8, 100);  
-    render(heart9, 100);  
-    render(heart10, 100);  
-    render(heart11, 100);  
-    render(heart12, 100);  
-    render(heart13, 100);  
-    render(heart1, 100);
-    render(heart2, 100);  
-    render(heart3, 100);  
-    render(heart4, 100);  
-    render(heart5, 100);
-    render(heart6, 100);  
-    render(heart6, 100);  
-  }
+  render(heart6, 100);  
+  render(heart6, 100);  
+  render(heart7, 100);  
+  render(heart8, 100);  
+  render(heart9, 100);  
+  render(heart10, 100);  
+  render(heart11, 100);  
+  render(heart12, 100);  
+  render(heart13, 100);  
+  render(heart1, 100);
+  render(heart2, 100);  
+  render(heart3, 100);  
+  render(heart4, 100);  
+  render(heart5, 100);
+  render(heart6, 100);  
+  render(heart6, 100);  
 }
 
-void eq(uint8_t times) {
+void eq() {
   byte eq1[8]={
 B00000000,
 B00001100,
@@ -870,28 +855,26 @@ B11111100,
 B11111111,
 B11111111};
 
-  for (int i = 0; i < times; i++) {
-    render(eq1, 50);
-    render(eq2, 50);  
-    render(eq3, 50);  
-    render(eq4, 50);  
-    render(eq5, 50);  
-    render(eq6, 50);  
-    render(eq7, 50);  
-    render(eq8, 50);  
-    render(eq9, 50);  
-    render(eq10, 50);  
-    render(eq11, 50);  
-    render(eq12, 50);  
-    render(eq13, 50);  
-    render(eq14, 50);  
-    render(eq15, 50);     
-  }
+  render(eq1, 50);
+  render(eq2, 50);  
+  render(eq3, 50);  
+  render(eq4, 50);  
+  render(eq5, 50);  
+  render(eq6, 50);  
+  render(eq7, 50);  
+  render(eq8, 50);  
+  render(eq9, 50);  
+  render(eq10, 50);  
+  render(eq11, 50);  
+  render(eq12, 50);  
+  render(eq13, 50);  
+  render(eq14, 50);  
+  render(eq15, 50);     
 }
 
 
 
-void invaderagain(uint8_t times) {
+void invaderagain() {
   byte invader1[8]={
 B00000000,
 B00000000,
@@ -1066,39 +1049,33 @@ B00000001,
 B00000001,
 B00000001};
 
-
-
-  for (int i = 0; i < times; i++) {
-    render(invader1, 200);
-    render(invader2, 200);
-    render(invader3, 200);
-    render(invader4, 200);
-    render(invader5, 200);
-    render(invader6, 200);
-    render(invader7, 200);
-    render(invader8, 200);
-    render(invader9, 200);
-    render(invader9a, 200);
-    render(invader9, 200);
-    render(invader9a, 200);
-    render(invader9, 200);
-    render(invader9a, 200);
-    render(invader9, 200);
-    render(invader10, 200);
-    render(invader11, 200);
-    render(invader12, 200);
-    render(invader13, 200);
-    render(invader14, 200);
-    render(invader15, 200);
-    render(invader16, 200);
-    render(invader1, 200);
-                                                
-
-  }
+  render(invader1, 200);
+  render(invader2, 200);
+  render(invader3, 200);
+  render(invader4, 200);
+  render(invader5, 200);
+  render(invader6, 200);
+  render(invader7, 200);
+  render(invader8, 200);
+  render(invader9, 200);
+  render(invader9a, 200);
+  render(invader9, 200);
+  render(invader9a, 200);
+  render(invader9, 200);
+  render(invader9a, 200);
+  render(invader9, 200);
+  render(invader10, 200);
+  render(invader11, 200);
+  render(invader12, 200);
+  render(invader13, 200);
+  render(invader14, 200);
+  render(invader15, 200);
+  render(invader16, 200);
+  render(invader1, 200);
 }
 
 
-void pong(uint8_t times) {
+void pong() {
   byte pong1[8]={
 B00111000,
 B00000000,
@@ -1170,7 +1147,6 @@ B00000000,
 B00000000,
 B00001110};
 
-
   byte pong8[8]={
 B11100000,
 B01000000,
@@ -1180,7 +1156,6 @@ B00000000,
 B00000000,
 B00000000,
 B00011100};
-
 
   byte pong9[8]={
 B11100000,
@@ -1212,7 +1187,6 @@ B00000000,
 B00000000,
 B01110000};
 
-
   byte pong12[8]={
 B01110000,
 B00000000,
@@ -1222,7 +1196,6 @@ B00000000,
 B00000100,
 B00000000,
 B00111000};
-
 
   byte pong13[8]={
 B01110000,
@@ -1234,7 +1207,6 @@ B00000000,
 B00000010,
 B00011100};
 
-
   byte pong14[8]={
 B00111000,
 B00000000,
@@ -1245,8 +1217,6 @@ B00000000,
 B00000000,
 B00011101};
 
-  
-  for (int i = 0; i < times; i++) {
     render(pong1, 200);  
     render(pong2, 200);  
     render(pong3, 200);  
@@ -1261,5 +1231,4 @@ B00011101};
     render(pong12, 200);
     render(pong13, 200);  
     render(pong14, 200);  
-  }
 }
