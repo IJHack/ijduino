@@ -1,14 +1,33 @@
+
+/*
+IJduino 1.0
+
+Requires:
+* 8X8 LED grid MAX7219
+* Mini Breadboard
+* Atmega328
+* Button
+* 2 Wires
+* 4.5 Volt
+
+(c) IJhack 2014 GNU GPL 
+                          http://ijhack.org/
+*/
 #include "LedControl.h"
 
+/* using VCC, GND, DIN 21, CS 21, CLK 5 for the MAX7219 */
 LedControl lc=LedControl(20,5,21,1);
+
+int lowPin = 11;             /* ground pin for the buton ;-) */
+int buttonPin = 9;           /* choose the input pin for the pushbutton */
 
 int animations = 10;
 
-int lowPin = 11;
-int buttonPin = 9;               // choose the input pin for the pushbutton
-
 int anicount = 0;
-int buttonState = 0;
+int buttonState = LOW;
+int lastButtonState = LOW;   /* the previous reading from the input pin */
+long lastDebounceTime = 0;   /* the last time the output pin was toggled */
+long debounceDelay = 50;     /* the debounce time; increase if the output flickers */
 
 void setup() {
   /*
@@ -27,23 +46,6 @@ void setup() {
 }
 
 void loop() {
-   // read the state of the pushbutton value:
-  buttonState = digitalRead(buttonPin);
-
-  // check if the pushbutton is pressed.
-  // if it is, the buttonState is HIGH:
-  if (buttonState == LOW) {
-    anicount++;
-    if (anicount > animations) {
-      anicount = 0;
-    }
-    anicounting();
-  } else {
-    anicounting();
-  }
-}
-
-void anicounting() {
   switch (anicount) {
     case 0:
       ijhacklogo();
@@ -81,7 +83,7 @@ void anicounting() {
   }
 }
 
-void render(byte* animation, int delaytime) {
+bool render(byte* animation, int delaytime) {
   lc.setColumn(0,0,animation[7]);
   lc.setColumn(0,1,animation[6]);
   lc.setColumn(0,2,animation[5]);
@@ -90,7 +92,47 @@ void render(byte* animation, int delaytime) {
   lc.setColumn(0,5,animation[2]);
   lc.setColumn(0,6,animation[1]);
   lc.setColumn(0,7,animation[0]);
-  delay(delaytime);
+  
+  int startTime = millis();
+  while ((startTime + delaytime) > millis()){
+  
+    // read the state of the switch into a local variable:
+    int reading = digitalRead(buttonPin);
+
+    // check to see if you just pressed the button 
+    // (i.e. the input went from HIGH to LOW),  and you've waited 
+    // long enough since the last press to ignore any noise:  
+  
+    // If the switch changed, due to noise or pressing:
+    if (reading != lastButtonState) {
+      // reset the debouncing timer
+      lastDebounceTime = millis();
+    } 
+    
+    if ((millis() - lastDebounceTime) > debounceDelay) {
+      // whatever the reading is at, it's been there for longer
+      // than the debounce delay, so take it as the actual current state:
+  
+      // if the button state has changed:
+      if (reading != buttonState) {
+        buttonState = reading;
+  
+        // only toggle the animation if the new button state is HIGH
+        if (buttonState == LOW) {
+          anicount++;
+          if (anicount > animations) {
+            anicount = 0;
+          }
+          return true;
+        }
+      }
+    }
+  
+    // save the reading.  Next time through the loop,
+    // it'll be the lastButtonState:
+    lastButtonState = reading;
+  }
+  return false;  /* don't skip the rest */
 } 
 
 void invade() {
@@ -435,14 +477,23 @@ B00000000,
 B00000000,
 B00000000};
 
-  render(logowink0, 500);
-  render(logowink1, 500);
-  render(logowink0, 500);
-  render(logowink2, 500);
-  render(logowink0, 500);
-  render(logowink3, 500);
+  skip = render(logowink0, 500);
+  if (!skip) {
+    skip = render(logowink1, 500);
+  }
+  if (!skip) {
+    skip = render(logowink0, 500);
+  }
+  if (!skip) {
+    skip = render(logowink2, 500);
+  }
+  if (!skip) {
+    skip = render(logowink0, 500);
+  }
+  if (!skip) {
+    skip = render(logowink3, 500);
+  }
 }
-
 void ijhacklogo() {
   /* here is the data for the characters */
   byte ij[8]={
@@ -1217,18 +1268,18 @@ B00000000,
 B00000000,
 B00011101};
 
-    render(pong1, 200);  
-    render(pong2, 200);  
-    render(pong3, 200);  
-    render(pong4, 200);  
-    render(pong5, 200);  
-    render(pong6, 200);
-    render(pong7, 200);  
-    render(pong8, 200);  
-    render(pong9, 200);  
-    render(pong10, 200);  
-    render(pong11, 200);  
-    render(pong12, 200);
-    render(pong13, 200);  
-    render(pong14, 200);  
+  render(pong1, 200);  
+  render(pong2, 200);  
+  render(pong3, 200);  
+  render(pong4, 200);  
+  render(pong5, 200);  
+  render(pong6, 200);
+  render(pong7, 200);  
+  render(pong8, 200);  
+  render(pong9, 200);  
+  render(pong10, 200);  
+  render(pong11, 200);  
+  render(pong12, 200);
+  render(pong13, 200);  
+  render(pong14, 200);  
 }
