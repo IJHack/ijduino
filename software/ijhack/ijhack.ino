@@ -1,7 +1,5 @@
 
-/*
-IJduino 1.0
-
+/*                            IJduino 1.0
 Requires:
 * 8X8 LED grid MAX7219
 * Mini Breadboard
@@ -9,9 +7,8 @@ Requires:
 * Button
 * 2 Wires
 * 4.5 Volt
-
-(c) IJhack 2014 GNU GPL 
-                          http://ijhack.org/
+                        (c) IJhack 2014 GNU GPL 
+                           http://ijhack.org/
 */
 #include "LedControl.h"
 
@@ -156,7 +153,10 @@ B01111110,
 B00100100,
 B00100100};
   
-  render(invade, 500);
+  bool skip = render(invade, 500);
+  if (skip) {
+    return;
+  }
   render(devade, 500);
 }
 
@@ -181,7 +181,10 @@ B00100100,
 B01011010,
 B10100101};
 
-  render(invadesquid, 500);
+  bool skip = render(invadesquid, 500);
+  if (skip) {
+    return;
+  }
   render(devadesquid, 500);  
 }
 
@@ -277,7 +280,6 @@ B01100011,
 B01111111,
 B01010101};
 
-
 byte ghost9a[8]={
 B00011100,
 B00111110,
@@ -318,7 +320,6 @@ B01100011,
 B01111111,
 B01010101};
 
-
 byte ghost9e[8]={
 B00011100,
 B00111110,
@@ -328,7 +329,6 @@ B01111111,
 B01100011,
 B01111111,
 B01010101};
-
 
 byte ghost10[8]={
 B00001110,
@@ -456,7 +456,6 @@ B11100111,
 B01111110,
 B00111100};
 
-
    byte logowink2[8]={  
 B11000000,
 B11000000,
@@ -553,10 +552,23 @@ B11011110,
 B11000111
  };
 
-  render(ij, 500);
-  render(h, 500);
-  render(a, 500);
-  render(c, 500);
+  bool skip;
+  skip = render(ij, 500);
+  if (skip) {
+    return;
+  }
+  skip = render(h, 500);
+  if (skip) {
+    return;
+  }
+  skip = render(a, 500);
+  if (skip) {
+    return;
+  }
+  skip = render(c, 500);
+  if (skip) {
+    return;
+  }
   render(k, 500);
 }
 
