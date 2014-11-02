@@ -2,6 +2,14 @@
 
 LedControl lc=LedControl(20,5,21,1);
 
+int animations = 8;
+
+int pullupPin = 13;
+int buttonPin = 9;               // choose the input pin for the pushbutton
+
+int anicount = 0;
+int buttonState = 0;
+
 void setup() {
   /*
    The MAX72XX is in power-saving mode on startup,
@@ -12,6 +20,59 @@ void setup() {
   lc.setIntensity(0,15);
   /* and clear the display */
   lc.clearDisplay(0);
+  /* setup pins */
+  pinMode(buttonPin, INPUT_PULLUP);
+  pinMode(pullupPin, OUTPUT);
+  digitalWrite(pullupPin, LOW);
+}
+
+void loop() {
+   // read the state of the pushbutton value:
+  buttonState = digitalRead(buttonPin);
+
+  // check if the pushbutton is pressed.
+  // if it is, the buttonState is HIGH:
+  if (buttonState == LOW) {
+    anicount++;
+    if (anicount > animations) {
+      anicount = 0;
+    }
+    anicounting();
+  } else {
+    anicounting();
+  }
+}
+
+void anicounting() {
+  switch (anicount) {
+    case 0:
+      ijhacklogo();
+      break;
+    case 1:
+      ghost(1);
+      break;
+  }
+  if (anicount == 2) {
+    invade(1);
+  }
+  if (anicount == 3) {
+    heart(1);
+  }
+  if (anicount == 4) {
+    invadesquid(1);
+  }
+  if (anicount == 5) {
+    jumper(1);
+  }
+  if (anicount == 6) {
+    ijlogowink(1);
+  }
+  if (anicount == 7) {
+    heartbeat(1);
+  }
+  if (anicount == 8) {
+    eq(1);
+  }
 }
 
 void render(byte* animation, int delaytime) {
@@ -26,7 +87,7 @@ void render(byte* animation, int delaytime) {
   delay(delaytime);
 } 
 
-void invade(int times = 1) {
+void invade(uint8_t times) {
    byte invade[8]={
 B00100100,
 B00100100,
@@ -46,14 +107,14 @@ B11111111,
 B01111110,
 B00100100,
 B00100100};
- 
-  for (int i = 1; i < times; i++) {
+  
+  for (int i = 0; i < times; i++) {
     render(invade, 500);
     render(devade, 500);  
   }
 }
 
-void invadesquid(int times = 1) {
+void invadesquid(int8_t times) {
    byte invadesquid[8]={
 B00011000,
 B00111100,
@@ -74,14 +135,13 @@ B00100100,
 B01011010,
 B10100101};
 
-  for (int i = 1; i < times; i++) {
+  for (int i = 0; i < times; i++) {
     render(invadesquid, 500);
     render(devadesquid, 500);  
   }
 }
 
-
-void ghost(int times = 1) {
+void ghost(uint8_t times) {
 
  byte ghost1[8]={
 B00000000,
@@ -113,7 +173,6 @@ B11000000,
 B11000000,
 B01000000};
 
-
  byte ghost4[8]={
 B10000000,
 B11000000,
@@ -123,7 +182,6 @@ B11100000,
 B01100000,
 B11100000,
 B00100000};
-
 
  byte ghost5[8]={
 B11000000,
@@ -135,8 +193,6 @@ B00110000,
 B11110000,
 B01010000};
 
-
-
  byte ghost6[8]={
 B11100000,
 B11110000,
@@ -147,7 +203,6 @@ B00011000,
 B11111000,
 B10101000};
 
-
  byte ghost7[8]={
 B01110000,
 B11111000,
@@ -157,9 +212,6 @@ B11111100,
 B10001100,
 B11111100,
 B01010100};
-
-
-
 
   byte ghost8[8]={
 B00111000,
@@ -305,8 +357,7 @@ B00000000,
 B00000000,
 B00000000};
 
-
-  for (int i = 1; i < times; i++) {
+  for (int i = 0; i < times; i++) {
     render(ghost1, 200);
     render(ghost2, 200);  
     render(ghost3, 200);
@@ -343,12 +394,7 @@ B00000000};
   }
 }
 
-
-
-
-
-
-void ijlogowink(int times = 1) {
+void ijlogowink(uint8_t times) {
   byte logowink0[8]={
 B11000011,
 B11000011,
@@ -390,14 +436,13 @@ B00000000,
 B00000000,
 B00000000};
 
-  for (int i = 1; i < times; i++) {  
+  for (int i = 0; i < times; i++) {  
     render(logowink0, 500);
     render(logowink1, 500);
     render(logowink0, 500);
     render(logowink2, 500);
     render(logowink0, 500);
     render(logowink3, 500);
-    render(logowink0, 500);
   }
 }
 
@@ -461,7 +506,7 @@ B11000111
   render(k, 500);
 }
 
-void heart(int times = 1) {
+void heart(uint8_t times) {
   
   /* here is the data for the characters */
   byte heart2[8]={B00000000,
@@ -484,14 +529,14 @@ B01111110,
 B00111100,
 B00011000};
 
-  for (int i = 1; i < times; i++) {
+  for (int i = 0; i < times; i++) {
     render(heart1, 500);
     render(heart2, 500); 
   }
 }
 
-void jumper(int times = 1) {
-byte jumpdown[8]={
+void jumper(uint8_t times) {
+  byte jumpdown[8]={
 B00111100,
 B00111100,
 B00011000,
@@ -501,7 +546,7 @@ B00011000,
 B00100100,
 B00100100};
 
-byte jumpup[8]={
+  byte jumpup[8]={
 B00111100,
 B01011010,
 B00111100,
@@ -511,16 +556,14 @@ B00100100,
 B01000010,
 B00000000};
  
-  for (int i = 1; i < times; i++) {
+  for (int i = 0; i < times; i++) {
     render(jumpdown, 500);
     render(jumpup, 500);  
   }
 }
 
-
-
-void heartbeat(int times = 1) {
-byte heart1[8]={
+void heartbeat(uint8_t times) {
+  byte heart1[8]={
 B00000000,
 B00000100,
 B00000110,
@@ -530,7 +573,7 @@ B00010100,
 B00001100,
 B00000100};
 
-byte heart2[8]={
+  byte heart2[8]={
 B00000000,
 B00000010,
 B00000011,
@@ -540,7 +583,7 @@ B00001010,
 B00000110,
 B00000010};
 
-byte heart3[8]={
+  byte heart3[8]={
 B00000000,
 B00000001,
 B00000001,
@@ -550,8 +593,7 @@ B00000101,
 B00000011,
 B00000001};
 
-
-byte heart4[8]={
+  byte heart4[8]={
 B00000000,
 B00000000,
 B00000000,
@@ -561,8 +603,7 @@ B00000010,
 B00000001,
 B00000000};
 
-
-byte heart5[8]={
+  byte heart5[8]={
 B00000000,
 B00000000,
 B00000000,
@@ -572,8 +613,7 @@ B00000001,
 B00000000,
 B00000000};
 
-
-byte heart6[8]={
+  byte heart6[8]={
 B00000000,
 B00000000,
 B00000000,
@@ -583,8 +623,7 @@ B00000000,
 B00000000,
 B00000000};
 
-
-byte heart7[8]={
+  byte heart7[8]={
 B00000000,
 B00000000,
 B00000000,
@@ -594,8 +633,7 @@ B00000000,
 B00000000,
 B00000000};
 
-
-byte heart8[8]={
+  byte heart8[8]={
 B00000000,
 B00000000,
 B10000000,
@@ -605,8 +643,7 @@ B00000000,
 B00000000,
 B00000000};
 
-
-byte heart9[8]={
+  byte heart9[8]={
 B00000000,
 B10000000,
 B11000000,
@@ -616,7 +653,7 @@ B10000000,
 B10000000,
 B10000000};
 
-byte heart10[8]={
+  byte heart10[8]={
 B00000000,
 B01000000,
 B01100000,
@@ -626,7 +663,7 @@ B01000000,
 B11000000,
 B01000000};
 
-byte heart11[8]={
+  byte heart11[8]={
 B00000000,
 B00100000,
 B00110000,
@@ -636,7 +673,7 @@ B10100000,
 B01100000,
 B00100000};
 
-byte heart12[8]={
+  byte heart12[8]={
 B00000000,
 B00010000,
 B00011000,
@@ -646,7 +683,7 @@ B01010000,
 B00110000,
 B00010000};
 
-byte heart13[8]={
+  byte heart13[8]={
 B00000000,
 B00001000,
 B00001100,
@@ -656,8 +693,7 @@ B00101000,
 B00011000,
 B00001000};
 
-
-for (int i = 1; i < times; i++) {
+for (int i = 0; i < times; i++) {
     render(heart6, 100);  
     render(heart6, 100);  
     render(heart7, 100);  
@@ -674,14 +710,11 @@ for (int i = 1; i < times; i++) {
     render(heart5, 100);
     render(heart6, 100);  
     render(heart6, 100);  
-
   }
 }
 
-
-
-void eq(int times = 1) {
-byte eq1[8]={
+void eq(uint8_t times) {
+  byte eq1[8]={
 B00000000,
 B00001100,
 B11001100,
@@ -691,7 +724,7 @@ B11111100,
 B11111111,
 B11111111};
 
-byte eq2[8]={
+  byte eq2[8]={
 B00000000,
 B00001100,
 B11001100,
@@ -701,7 +734,7 @@ B11111100,
 B11111111,
 B11111111};
 
-byte eq3[8]={
+  byte eq3[8]={
 B00000000,
 B00001100,
 B11001100,
@@ -711,7 +744,7 @@ B11111100,
 B11111111,
 B11111111};
 
-byte eq4[8]={
+  byte eq4[8]={
 B00000000,
 B00000000,
 B00001100,
@@ -721,8 +754,7 @@ B11111111,
 B11111111,
 B11111111};
 
-
-byte eq5[8]={
+  byte eq5[8]={
 B00000000,
 B00000000,
 B00000000,
@@ -732,8 +764,7 @@ B11001111,
 B11111111,
 B11111111};
 
-
-byte eq6[8]={
+  byte eq6[8]={
 B00000000,
 B00000000,
 B00000000,
@@ -743,7 +774,7 @@ B11001111,
 B11001111,
 B11111111};
 
-byte eq7[8]={
+  byte eq7[8]={
 B00000000,
 B00000000,
 B00000011,
@@ -753,8 +784,7 @@ B00001111,
 B11001111,
 B11001111};
 
-
-byte eq8[8]={
+  byte eq8[8]={
 B00000000,
 B00000000,
 B00000000,
@@ -764,7 +794,7 @@ B00001111,
 B00001111,
 B11111111};
 
-byte eq9[8]={
+  byte eq9[8]={
 B00000000,
 B00000000,
 B00000000,
@@ -774,7 +804,7 @@ B00000011,
 B00111111,
 B11111111};
 
-byte eq10[8]={
+  byte eq10[8]={
 B00000000,
 B00000000,
 B00000000,
@@ -784,8 +814,7 @@ B00000011,
 B00111111,
 B11111111};
 
-
-byte eq11[8]={
+  byte eq11[8]={
 B00000000,
 B00000000,
 B00000000,
@@ -795,8 +824,7 @@ B00001111,
 B11001111,
 B11111111};
 
-
-byte eq12[8]={
+  byte eq12[8]={
 B00000000,
 B00000000,
 B00000000,
@@ -806,7 +834,7 @@ B11001111,
 B11111111,
 B11111111};
 
-byte eq13[8]={
+  byte eq13[8]={
 B00000000,
 B00000000,
 B00000000,
@@ -816,7 +844,7 @@ B11111111,
 B11111111,
 B11111111};
 
-byte eq14[8]={
+  byte eq14[8]={
 B00000000,
 B00000000,
 B00001100,
@@ -826,7 +854,7 @@ B11111111,
 B11111111,
 B11111111};
 
-byte eq15[8]={
+  byte eq15[8]={
 B00000000,
 B00001100,
 B11001100,
@@ -836,11 +864,7 @@ B11111100,
 B11111111,
 B11111111};
 
-
-
-
- 
-  for (int i = 1; i < times; i++) {
+  for (int i = 0; i < times; i++) {
     render(eq1, 50);
     render(eq2, 50);  
     render(eq3, 50);  
@@ -857,33 +881,4 @@ B11111111};
     render(eq14, 50);  
     render(eq15, 50);     
   }
-}
-
-
-
-
-
-
-
-void loop() {
-  ijhacklogo();
-  delay (1000);
-  ghost(3);
-  delay(500);
-  invade(4);
-  delay (1000);
-  heart(4);
-  delay (1000);
-  invadesquid(3);
-  delay (1000);
-  jumper(4);
-  delay (1000);
-  heartbeat(6);
-  delay(1000);
-  eq(8);
-  delay(1000);  
-  ijlogowink(3);
-  lc.clearDisplay(0);
-  delay (1000);
-  
 }
