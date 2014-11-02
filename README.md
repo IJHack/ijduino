@@ -4,7 +4,6 @@ IJduino
 * Mini Breadboard
 * Atmega328
 * Button
-* USB-serial
 
 https://pad.ijhack.nl/p/ijduino
 
