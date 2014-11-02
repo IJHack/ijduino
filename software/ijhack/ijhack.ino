@@ -1,5 +1,5 @@
 
-/*                            IJduino 1.0
+/*                            IJduino 1.1
 Requires:
 * 8X8 LED grid MAX7219
 * Mini Breadboard
@@ -45,36 +45,118 @@ void setup() {
 void loop() {
   switch (anicount) {
     case 0:
+      bool skip;
+      skip = ijhacklogo();
+      if (skip) {
+        return; 
+      }
+      skip = pong();
+      if (skip) {
+        return; 
+      }
+      skip = pong();
+      if (skip) {
+        return; 
+      }
+      skip = ijlogowink();
+      if (skip) {
+        return; 
+      }
+      skip = ijlogowink();
+      if (skip) {
+        return; 
+      }
+      skip = ijlogowink();
+      if (skip) {
+        return; 
+      }
+      skip = jumper();
+      if (skip) {
+        return; 
+      }
+      skip = invade();
+      if (skip) {
+        return; 
+      }
+      skip = invade();
+      if (skip) {
+        return; 
+      }
+      skip = invaderagain();
+      if (skip) {
+        return; 
+      }
+      skip = invade();
+      if (skip) {
+        return; 
+      }
+      skip = invade();
+      if (skip) {
+        return; 
+      }
+      skip = invade();
+      if (skip) {
+        return; 
+      }
+      skip = eq();
+      if (skip) {
+        return; 
+      }
+      skip = eq();
+      if (skip) {
+        return; 
+      }
+      skip = eq();
+      if (skip) {
+        return; 
+      }
+      skip = eq();
+      if (skip) {
+        return; 
+      }
+      skip = heart();
+      if (skip) {
+        return; 
+      }
+      skip = heart();
+      if (skip) {
+        return; 
+      }
+      skip = heart();
+      if (skip) {
+        return; 
+      }
+    case 1:
       ijhacklogo();
       break;
-    case 1:
+    case 2:
       ghost();
       break;
-    case 2:
+    case 3:
       invade();
       break;
-    case 3:
+    case 4:
       heart();
       break;
-    case 4:
+    case 5:
       invadesquid();
       break;
-    case 5:
+    case 6:
       jumper();
       break;
-    case 6:
+    case 7:
       ijlogowink();
       break;
-    case 7:
+    case 8:
       heartbeat();
       break;
-    case 8:
+    case 9:
       eq();
       break;
-    case 9:
+    case 10:
       invaderagain();
       break;
-    case 10:
+    case 11:
       pong();
       break;
   }
@@ -132,7 +214,7 @@ bool render(byte* animation, int delaytime) {
   return false;  /* don't skip the rest */
 } 
 
-void invade() {
+bool invade() {
    byte invade[8]={
 B00100100,
 B00100100,
@@ -155,12 +237,16 @@ B00100100};
   
   bool skip = render(invade, 500);
   if (skip) {
-    return;
+    return true;
   }
-  render(devade, 500);
+  skip = render(devade, 500);
+  if (skip) {
+    return true;
+  }
+  return false;  /* don't skip the rest */
 }
 
-void invadesquid() {
+bool invadesquid() {
    byte invadesquid[8]={
 B00011000,
 B00111100,
@@ -183,12 +269,16 @@ B10100101};
 
   bool skip = render(invadesquid, 500);
   if (skip) {
-    return;
+    return true;
   }
-  render(devadesquid, 500);  
+  skip = render(devadesquid, 500);  
+  if (skip) {
+    return true;
+  }
+  return false;  /* don't skip the rest */
 }
 
-void ghost() {
+bool ghost() {
 
  byte ghost1[8]={
 B00000000,
@@ -404,132 +494,136 @@ B00000000};
   bool skip;
   skip = render(ghost1, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost2, 200);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost3, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost4, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost5, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost6, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost7, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost8, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost9, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost9a, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost9b, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost9c, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost9d, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost9e, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost9a, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost9b, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost9c, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost9d, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost9e, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost9a, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost9b, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost9c, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost9d, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost9e, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost9, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost10, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost11, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost12, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost13, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost14, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(ghost15, 200);
   if (skip) {
-    return;
+    return true;
   }
-  render(ghost16, 200);
+  skip = render(ghost16, 200);
+  if (skip) {
+    return true;
+  }
+  return false;  /* don't skip the rest */
 }
 
-void ijlogowink() {
+bool ijlogowink() {
   byte logowink0[8]={
 B11000011,
 B11000011,
@@ -573,27 +667,32 @@ B00000000};
   bool skip;
   skip = render(logowink0, 500);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(logowink1, 500);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(logowink0, 500);
   if (skip) {
-    return;
+    return true;
   }  
   skip = render(logowink2, 500);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(logowink0, 500);
   if (skip) {
-    return;
+    return true;
   }
-  skip = render(logowink3, 500);  
+  skip = render(logowink3, 500); 
+  if (skip) {
+    return true;
+  } 
+  return false;  /* don't skip the rest */
 }
-void ijhacklogo() {
+
+bool ijhacklogo() {
   /* here is the data for the characters */
   byte ij[8]={
 B11000011,
@@ -649,24 +748,28 @@ B11000111
   bool skip;
   skip = render(ij, 500);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(h, 500);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(a, 500);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(c, 500);
   if (skip) {
-    return;
+    return true;
   }
-  render(k, 500);
+  skip = render(k, 500);
+  if (skip) {
+    return true;
+  }
+  return false;  /* don't skip the rest */
 }
 
-void heart() {
+bool heart() {
   
   /* here is the data for the characters */
   byte heart2[8]={B00000000,
@@ -691,12 +794,16 @@ B00011000};
 
   bool skip = render(heart1, 500);
   if (skip) {
-    return;
+    return true;
   }
-  render(heart2, 500); 
+  skip = render(heart2, 500); 
+  if (skip) {
+    return true;
+  }
+  return false;  /* don't skip the rest */
 }
 
-void jumper() {
+bool jumper() {
   byte jumpdown[8]={
 B00111100,
 B00111100,
@@ -719,12 +826,16 @@ B00000000};
 
   bool skip = render(jumpdown, 500);
   if (skip) {
-    return;
+    return true;
   }
-  render(jumpup, 500);  
+  skip = render(jumpup, 500);  
+  if (skip) {
+    return true;
+  }
+  return false;  /* don't skip the rest */
 }
 
-void heartbeat() {
+bool heartbeat() {
   byte heart1[8]={
 B00000000,
 B00000100,
@@ -858,64 +969,68 @@ B00001000};
   bool skip;
   skip = render(heart6, 100);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(heart6, 100);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(heart7, 100);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(heart8, 100);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(heart9, 100);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(heart10, 100);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(heart11, 100);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(heart12, 100);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(heart13, 100);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(heart1, 100);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(heart2, 100);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(heart3, 100);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(heart4, 100);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(heart5, 100);
   if (skip) {
-    return;
+    return true;
   }
-  render(heart6, 100);  
+  skip = render(heart6, 100);  
+  if (skip) {
+    return true;
+  }
+  return false;  /* don't skip the rest */
 }
 
-void eq() {
+bool eq() {
   byte eq1[8]={
 B00000000,
 B00001100,
@@ -1069,66 +1184,68 @@ B11111111};
   bool skip;
   skip = render(eq1, 50);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(eq2, 50);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(eq3, 50);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(eq4, 50);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(eq5, 50);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(eq6, 50);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(eq7, 50);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(eq8, 50);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(eq9, 50);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(eq10, 50);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(eq11, 50);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(eq12, 50);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(eq13, 50);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(eq14, 50);  
   if (skip) {
-    return;
+    return true;
   }
-  render(eq15, 50);     
+  skip = render(eq15, 50);    
+  if (skip) {
+    return true;
+  }
+  return false;  /* don't skip the rest */ 
 }
 
-
-
-void invaderagain() {
+bool invaderagain() {
   byte invader1[8]={
 B00000000,
 B00000000,
@@ -1239,7 +1356,6 @@ B01001100,
 B01000000,
 B01100001};
 
-
    byte invader11[8]={
 B00001001,
 B00011111,
@@ -1249,8 +1365,6 @@ B00101001,
 B00100110,
 B00100000,
 B00110000};
-
-
 
    byte invader12[8]={
 B00000100,
@@ -1306,97 +1420,101 @@ B00000001};
   bool skip;
   skip = render(invader1, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader2, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader3, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader4, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader5, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader6, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader7, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader8, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader9, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader9a, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader9, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader9a, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader9, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader9a, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader9, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader10, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader11, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader12, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader13, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader14, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader15, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(invader16, 200);
   if (skip) {
-    return;
+    return true;
   }
-  render(invader1, 200);
+  skip = render(invader1, 200);
+  if (skip) {
+    return true;
+  }
+  return false;  /* don't skip the rest */
 }
 
 
-void pong() {
+bool pong() {
   byte pong1[8]={
 B00111000,
 B00000000,
@@ -1541,55 +1659,59 @@ B00011101};
   bool skip;
   skip = render(pong1, 200);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(pong2, 200);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(pong3, 200);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(pong4, 200);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(pong5, 200);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(pong6, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(pong7, 200);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(pong8, 200);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(pong9, 200);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(pong10, 200);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(pong11, 200);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(pong12, 200);
   if (skip) {
-    return;
+    return true;
   }
   skip = render(pong13, 200);  
   if (skip) {
-    return;
+    return true;
   }
   skip = render(pong14, 200);  
+  if (skip) {
+    return true;
+  }
+  return false;  /* don't skip the rest */
 }
