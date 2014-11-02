@@ -181,6 +181,59 @@ B01100011,
 B01111111,
 B01010101};
 
+
+byte ghost9a[8]={
+B00011100,
+B00111110,
+B01101101,
+B01001001,
+B01111111,
+B01100011,
+B01111111,
+B01010101};
+
+byte ghost9b[8]={
+B00011100,
+B00111110,
+B01011011,
+B01001001,
+B01111111,
+B01100011,
+B01111111,
+B01010101};
+
+byte ghost9c[8]={
+B00011100,
+B00111110,
+B01001001,
+B01011011,
+B01111111,
+B01100011,
+B01111111,
+B01010101};
+
+byte ghost9d[8]={
+B00011100,
+B00111110,
+B01001001,
+B01101101,
+B01111111,
+B01100011,
+B01111111,
+B01010101};
+
+
+byte ghost9e[8]={
+B00011100,
+B00111110,
+B01101101,
+B01001001,
+B01111111,
+B01100011,
+B01111111,
+B01010101};
+
+
 byte ghost10[8]={
 B00001110,
 B00011111,
@@ -262,6 +315,22 @@ B00000000};
     render(ghost6, 200);
     render(ghost7, 200);
     render(ghost8, 200);
+    render(ghost9, 200);
+    render(ghost9a, 200);
+    render(ghost9b, 200);
+    render(ghost9c, 200);
+    render(ghost9d, 200);
+    render(ghost9e, 200);
+    render(ghost9a, 200);
+    render(ghost9b, 200);
+    render(ghost9c, 200);
+    render(ghost9d, 200);
+    render(ghost9e, 200);
+    render(ghost9a, 200);
+    render(ghost9b, 200);
+    render(ghost9c, 200);
+    render(ghost9d, 200);
+    render(ghost9e, 200);
     render(ghost9, 200);
     render(ghost10, 200);
     render(ghost11, 200);
@@ -799,7 +868,7 @@ B11111111};
 void loop() {
   ijhacklogo();
   delay (1000);
-  ghost(2);
+  ghost(3);
   delay(500);
   invade(4);
   delay (1000);
