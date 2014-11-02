@@ -93,7 +93,7 @@ bool render(byte* animation, int delaytime) {
   lc.setColumn(0,6,animation[1]);
   lc.setColumn(0,7,animation[0]);
   
-  int startTime = millis();
+  long startTime = millis();
   while ((startTime + delaytime) > millis()){
   
     // read the state of the switch into a local variable:
@@ -477,22 +477,28 @@ B00000000,
 B00000000,
 B00000000};
 
+  bool skip;
   skip = render(logowink0, 500);
-  if (!skip) {
-    skip = render(logowink1, 500);
+  if (skip) {
+    return;
   }
-  if (!skip) {
-    skip = render(logowink0, 500);
+  skip = render(logowink1, 500);
+  if (skip) {
+    return;
   }
-  if (!skip) {
-    skip = render(logowink2, 500);
+  skip = render(logowink0, 500);
+  if (skip) {
+    return;
+  }  
+  skip = render(logowink2, 500);
+  if (skip) {
+    return;
   }
-  if (!skip) {
-    skip = render(logowink0, 500);
+  skip = render(logowink0, 500);
+  if (skip) {
+    return;
   }
-  if (!skip) {
-    skip = render(logowink3, 500);
-  }
+  skip = render(logowink3, 500);  
 }
 void ijhacklogo() {
   /* here is the data for the characters */
