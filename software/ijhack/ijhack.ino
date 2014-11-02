@@ -2,7 +2,7 @@
 
 LedControl lc=LedControl(20,5,21,1);
 
-int animations = 8;
+int animations = 9;
 
 int pullupPin = 11;
 int buttonPin = 9;               // choose the input pin for the pushbutton
@@ -888,7 +888,7 @@ B11111111};
 
 
 
-void invaderagain(int8_t times) {
+void invaderagain(uint8_t times) {
   byte invader1[8]={
 B00000000,
 B00000000,
