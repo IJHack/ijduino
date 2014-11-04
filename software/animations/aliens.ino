@@ -1,7 +1,4 @@
 
-
-
-
 void aliens() {
 
 	byte alien1[8] = {
