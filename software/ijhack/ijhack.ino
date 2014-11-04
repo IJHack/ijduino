@@ -17,7 +17,7 @@ LedControl lc=LedControl(20,5,21,1);
 int lowPin = 11;             /* ground pin for the buton ;-) */
 int buttonPin = 9;           /* choose the input pin for the pushbutton */
 
-int animations = 15;         /* the number of animations we have */
+int animations = 16;         /* the number of animations we have */
 
 int lastButtonState = LOW;   /* the previous reading from the input pin */
 long lastDebounceTime = 0;   /* the last time the output pin was toggled */
@@ -90,6 +90,9 @@ void loop() {
 			break;  
 		case 15:
 			diagonals();
+			break;  
+		case 16:
+			waterdrip();
 			break;  
 	}
 }
@@ -2548,3 +2551,170 @@ void diagonals() {
 	render(diagonal2, 500);
 }
 
+void waterdrip() {
+	byte drip1[8] = {
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B11111111,
+		B11111111
+	};
+
+
+	byte drip2[8] = {
+		B00010000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B11111111,
+		B11111111
+	};
+
+	byte drip3[8] = {
+		B00000000,
+		B00010000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B11111111,
+		B11111111
+	};
+
+	byte drip4[8] = {
+		B00000000,
+		B00000000,
+		B00010000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B11111111,
+		B11111111
+	};
+
+	byte drip5[8] = {
+		B00000000,
+		B00000000,
+		B00000000,
+		B00010000,
+		B00000000,
+		B00000000,
+		B11111111,
+		B11111111
+	};
+
+	byte drip6[8] = {
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B00010000,
+		B00000000,
+		B11111111,
+		B11111111
+	};
+	byte drip7[8] = {
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B00010000,
+		B11111111,
+		B11111111
+	};
+
+	byte drip8[8] = {
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B11101111,
+		B11111111
+	};
+
+	byte drip9[8] = {
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B00101000,
+		B11010111,
+		B11111111
+	};
+
+	byte drip10[8] = {
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B00010000,
+		B10101011,
+		B11111111
+	};
+
+	byte drip11[8] = {
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B00000000,
+		B01111110,
+		B11111111
+
+	};
+
+	bool skip;
+	skip = render(drip1, 100);
+	if (skip) {
+		return;
+	}
+	skip = render(drip2, 100);
+	if (skip) {
+		return;
+	}
+	skip = render(drip3, 100);
+	if (skip) {
+		return;
+	}
+	skip = render(drip4, 100);
+	if (skip) {
+		return;
+	}
+	skip = render(drip5, 100);
+	if (skip) {
+		return;
+	}
+	skip = render(drip6, 100);
+	if (skip) {
+		return;
+	}
+	skip = render(drip7, 100);
+	if (skip) {
+		return;
+	}
+	skip = render(drip8, 100);
+	if (skip) {
+		return;
+	}
+	skip = render(drip9, 100);
+	if (skip) {
+		return;
+	}
+	skip = render(drip10, 100);
+	if (skip) {
+		return;
+	}
+	render(drip11, 100);
+
+}
