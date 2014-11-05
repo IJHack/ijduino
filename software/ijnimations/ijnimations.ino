@@ -18,6 +18,11 @@ int lowPin = 11;             /* ground pin for the buton ;-) */
 int buttonPin = 9;           /* choose the input pin for the pushbutton */
 
 int animations = 18;         /* the number of animations we have */
+void (*ijnimations[19])() = {
+                          ijhacklogo, ghost, invader, heart, invadesquid, jumper, ijlogowink, 
+                          heartbeat, eq, invaderagain, pong, snake, arrows, directions,
+                          packman, diagonals, waterdrip, aliens, blockanim
+                        };
 
 int lastButtonState = LOW;   /* the previous reading from the input pin */
 long lastDebounceTime = 0;   /* the last time the output pin was toggled */
@@ -42,65 +47,7 @@ void setup() {
 }
 
 void loop() {
-	switch (anicount) {
-		case 0:
-			ijhacklogo();
-			break;
-		case 1:
-			ghost();
-			break;
-		case 2:
-			invader();
-			break;
-		case 3:
-			heart();
-			break;
-		case 4:
-			invadesquid();
-			break;
-		case 5:
-			jumper();
-			break;
-		case 6:
-			ijlogowink();
-			break;
-		case 7:
-			heartbeat();
-			break;
-		case 8:
-			eq();
-			break;
-		case 9:
-			invaderagain();
-			break;
-		case 10:
-			pong();
-			break;
-		case 11:
-			snake();
-			break;
-		case 12:
-			arrows();
-			break;
-		case 13:
-			directions();
-			break;
-		case 14:
-			packman();
-			break;  
-		case 15:
-			diagonals();
-			break;  
-		case 16:
-			waterdrip();
-			break;  
-		case 17:
-			aliens();
-			break;  
-		case 18:
-			blockanim();
-			break;  
-	}
+	(ijnimations)[anicount];
 }
 
 bool render(byte* animation, int delaytime) {
