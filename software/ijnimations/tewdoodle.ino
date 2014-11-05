@@ -5,7 +5,7 @@
 
 	By tew
 */
-void tewdoodles() {
+int tewdoodles() {
 	byte tewdoodle1[8]=
 	{
 		B11111111,
