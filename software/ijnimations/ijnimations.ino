@@ -27,7 +27,7 @@ void (*ijnimations[19])() = {
 int lastButtonState = LOW;   /* the previous reading from the input pin */
 long lastDebounceTime = 0;   /* the last time the output pin was toggled */
 long debounceDelay = 50;     /* the debounce time; increase if the output flickers */
-int anicount = 0;
+int animation = 0;
 int buttonState = LOW;
 
 void setup() {
@@ -47,18 +47,18 @@ void setup() {
 }
 
 void loop() {
-	(ijnimations)[anicount]();
+	(ijnimations)[animation]();
 }
 
-bool render(byte* animation, int delaytime) {
-	lc.setColumn(0,0,animation[7]);
-	lc.setColumn(0,1,animation[6]);
-	lc.setColumn(0,2,animation[5]);
-	lc.setColumn(0,3,animation[4]);
-	lc.setColumn(0,4,animation[3]);
-	lc.setColumn(0,5,animation[2]);
-	lc.setColumn(0,6,animation[1]);
-	lc.setColumn(0,7,animation[0]);
+bool render(byte* frame, int delaytime) {
+	lc.setColumn(0,0,frame[7]);
+	lc.setColumn(0,1,frame[6]);
+	lc.setColumn(0,2,frame[5]);
+	lc.setColumn(0,3,frame[4]);
+	lc.setColumn(0,4,frame[3]);
+	lc.setColumn(0,5,frame[2]);
+	lc.setColumn(0,6,frame[1]);
+	lc.setColumn(0,7,frame[0]);
 
 	long startTime = millis();
 	while ((startTime + delaytime) > millis()){
@@ -86,9 +86,9 @@ bool render(byte* animation, int delaytime) {
 
 				// only toggle the animation if the new button state is HIGH
 				if (buttonState == LOW) {
-					anicount++;
-					if (anicount > animations) {
-						anicount = 0;
+					animation++;
+					if (animation > animations) {
+						animation = 0;
 					}
 					return true;
 				}
