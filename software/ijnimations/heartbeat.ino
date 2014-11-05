@@ -1,6 +1,7 @@
-
-
-void heartbeat() {
+/*
+	IJnimation heartbeat by realitygaps
+*/
+int heartbeat() {
 	byte heart1[8]={
 		B00000000,
 		B00000100,
@@ -134,60 +135,64 @@ void heartbeat() {
 	bool skip;
 	skip = render(heart6, 100);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(heart6, 100);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(heart7, 100);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(heart8, 100);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(heart9, 100);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(heart10, 100);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(heart11, 100);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(heart12, 100);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(heart13, 100);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(heart1, 100);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(heart2, 100);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(heart3, 100);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(heart4, 100);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(heart5, 100);
 	if (skip) {
-		return;
+		return true;
 	}
-	render(heart6, 100);  
+	skip = render(heart6, 100);  
+	if (skip) {
+		return true;
+	}
+	return false;
 }
 

@@ -1,5 +1,7 @@
-
-void directions() {
+/*
+	IJnimation directions by realitygaps
+*/
+int directions() {
 	byte directions1[8]={
 		B00000000,
 		B00000000,
@@ -123,47 +125,51 @@ void directions() {
 	bool skip;
 	skip = render(directions1, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(directions2, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(directions3, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(directions4, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(directions5, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(directions6, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(directions7, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(directions8, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(directions9, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(directions10, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(directions11, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(directions12, 200);
+	if (skip) {
+		return true;
+	}
+	return false;
 }

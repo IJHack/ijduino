@@ -1,5 +1,7 @@
-
-void diagonals() {
+/*
+	IJnimation 'diagonals' by Yvette Cendes
+*/
+int diagonals() {
 	byte diagonal1[8]={B01010101,
 		B10101010,
 		B01010101,
@@ -20,7 +22,11 @@ void diagonals() {
 
 	bool skip = render(diagonal1, 500);
 	if (skip) {
-		return;
+		return true;
 	}
-	render(diagonal2, 500);
+	skip = render(diagonal2, 500);
+	if (skip) {
+		return true;
+	}
+	return false;
 }

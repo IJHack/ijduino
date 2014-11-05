@@ -1,5 +1,7 @@
-
-void invaderagain() {
+/*
+	IJnimation invader again by realitygaps
+*/
+int invaderagain() {
 	byte invader1[8]={
 		B00000000,
 		B00000000,
@@ -177,92 +179,96 @@ void invaderagain() {
 	bool skip;
 	skip = render(invader1, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader2, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader3, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader4, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader5, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader6, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader7, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader8, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader9, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader9a, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader9, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader9a, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader9, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader9a, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader9, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader10, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader11, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader12, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader13, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader14, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader15, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(invader16, 200);
 	if (skip) {
-		return;
+		return true;
 	}
-	render(invader1, 200);
+	skip = render(invader1, 200);
+	if (skip) {
+		return true;
+	}
+	return false;
 }
 

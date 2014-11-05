@@ -1,5 +1,7 @@
-
-void jumper() {
+/*
+	IJnimation jumper byrealitygaps
+*/
+int jumper() {
 	byte jumpdown[8]={
 		B00111100,
 		B00111100,
@@ -22,7 +24,11 @@ void jumper() {
 
 	bool skip = render(jumpdown, 500);
 	if (skip) {
-		return;
+		return true;
 	}
-	render(jumpup, 500);  
+	skip = render(jumpup, 500);  
+	if (skip) {
+		return true;
+	}
+	return false;
 }

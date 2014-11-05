@@ -1,5 +1,7 @@
-
-void pong() {
+/*
+	IJnimation pong byrealitygaps
+*/
+int pong() {
 	byte pong1[8]={
 		B00111000,
 		B00000000,
@@ -144,56 +146,60 @@ void pong() {
 	bool skip;
 	skip = render(pong1, 200);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(pong2, 200);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(pong3, 200);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(pong4, 200);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(pong5, 200);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(pong6, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(pong7, 200);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(pong8, 200);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(pong9, 200);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(pong10, 200);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(pong11, 200);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(pong12, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(pong13, 200);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(pong14, 200);  
+	if (skip) {
+		return true;
+	}
+	return false;
 }
 

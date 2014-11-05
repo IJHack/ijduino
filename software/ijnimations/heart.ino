@@ -1,4 +1,7 @@
-void heart() {
+/*
+	IJnimation heart by damnlie
+*/
+int heart() {
 
 	/* here is the data for the characters */
 	byte heart2[8]={B00000000,
@@ -23,8 +26,12 @@ void heart() {
 
 	bool skip = render(heart1, 500);
 	if (skip) {
-		return;
+		return true;
 	}
-	render(heart2, 500); 
+	skip = render(heart2, 500); 
+	if (skip) {
+		return true;
+	}
+	return false;
 }
 

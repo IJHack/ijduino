@@ -1,6 +1,7 @@
-
-void packman() {
-
+/*
+	IJnimation "packman" by damnlie
+*/
+int packman() {
 
 	byte packman1[8]={
 		B00000000,
@@ -183,62 +184,67 @@ void packman() {
 	bool skip;
 	skip = render(packman1, 200);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(packman2, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(packman3, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(packman4, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(packman5, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(packman6, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(packman7, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(packman8, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(packman9, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(packman10, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(packman11, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(packman12, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(packman13, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(packman14, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(packman15, 200);
 	if (skip) {
-		return;
-	}  skip = render(packman16, 200);
+		return true;
+	} 
+	skip = render(packman16, 200);
+	if (skip) {
+		return true;
+	} 
+	return false;
 }

@@ -1,5 +1,7 @@
-
-void invadesquid() {
+/*
+	IJnimation invadesuid by realitygaps
+*/
+int invadesquid() {
 	byte invadesquid[8]={
 		B00011000,
 		B00111100,
@@ -22,8 +24,12 @@ void invadesquid() {
 
 	bool skip = render(invadesquid, 500);
 	if (skip) {
-		return;
+		return true;
 	}
-	render(devadesquid, 500);  
+	skip = render(devadesquid, 500);  
+	if (skip) {
+		return true;
+	}
+	return false;
 }
 

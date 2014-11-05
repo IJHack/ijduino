@@ -1,4 +1,7 @@
-void pulse() {
+/*
+	IJnimation pulse by Einstein
+*/
+int pulse() {
 	byte bigHeart[] = {
 		B01100110,
 		B11111111,
@@ -21,7 +24,11 @@ void pulse() {
 
 	bool skip = render(bigHeart, 500);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(smallHeart, 500);
+	if (skip) {
+		return true;
+	}
+	return false;
 }

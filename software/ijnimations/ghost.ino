@@ -1,5 +1,7 @@
-
-void ghost() {
+/*
+	IJnimation ghost by realitygaps
+*/
+int ghost() {
 
 	byte ghost1[8]={
 		B00000000,
@@ -215,127 +217,131 @@ void ghost() {
 	bool skip;
 	skip = render(ghost1, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost2, 200);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost3, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost4, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost5, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost6, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost7, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost8, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost9, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost9a, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost9b, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost9c, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost9d, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost9e, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost9a, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost9b, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost9c, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost9d, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost9e, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost9a, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost9b, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost9c, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost9d, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost9e, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost9, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost10, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost11, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost12, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost13, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost14, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ghost15, 200);
 	if (skip) {
-		return;
+		return true;
 	}
-	render(ghost16, 200);
+	skip = render(ghost16, 200);
+        if (skip) {
+                return true;
+        }
+        return false;
 }

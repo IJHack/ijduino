@@ -1,5 +1,7 @@
-
-void blockanim() {
+/*
+	IJnimation blockanim by Einstein
+*/
+int blockanim() {
 
 	byte ba1[8] = {
 		B11111111,
@@ -117,33 +119,36 @@ void blockanim() {
 	bool skip;
 	skip = render(ba1, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(ba2, 200);
 	if (skip) {
-		return;
+		return true;
 	} skip = render(ba3, 200);
 	if (skip) {
-		return;
+		return true;
 	} skip = render(ba4, 200);
 	if (skip) {
-		return;
+		return true;
 	} skip = render(ba5, 200);
 	if (skip) {
-		return;
+		return true;
 	} skip = render(ba6, 200);
 	if (skip) {
-		return;
+		return true;
 	} skip = render(ba7, 200);
 	if (skip) {
-		return;
+		return true;
 	} skip = render(ba8, 200);
 	if (skip) {
-		return;
+		return true;
 	} skip = render(ba9, 200);
 	if (skip) {
-		return;
+		return true;
 	}
-	render(ba10, 200);
-
+	skip = render(ba10, 200);
+	if (skip) {
+		return true;
+	}
+	return false;
 }

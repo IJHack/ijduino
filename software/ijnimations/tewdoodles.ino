@@ -1,5 +1,11 @@
+/*
+	Impressive 9 frame animation that will simply blow your mind!
 
-void tewdoodles() {
+	http://i.imgur.com/O55vc.gif
+
+	By tew
+*/
+int tewdoodles() {
 	byte tewdoodle1[8]=
 	{
 		B11111111,
@@ -95,36 +101,40 @@ void tewdoodles() {
 	bool skip;
 	skip = render(tewdoodle1, 100);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(tewdoodle2, 100);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(tewdoodle3, 100);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(tewdoodle4, 100);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(tewdoodle5, 100);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(tewdoodle6, 100);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(tewdoodle7, 100);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(tewdoodle8, 100);
 	if (skip) {
-		return;
+		return true;
 	}
+	skip = render(tewdoodle9, 100);
+	if (skip) {
+		return true;
+	}
+	return false;
 
-	render(tewdoodle9, 100);
 }

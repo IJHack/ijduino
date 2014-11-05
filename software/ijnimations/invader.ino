@@ -1,5 +1,7 @@
-
-void invader() {
+/*
+	First IJnimation "invader" by realitygaps
+*/
+int invader() {
 	byte invade[8]={
 		B00100100,
 		B00100100,
@@ -22,7 +24,11 @@ void invader() {
 
 	bool skip = render(invade, 500);
 	if (skip) {
-		return;
+		return true;
 	}
-	render(devade, 500);
+	skip = render(devade, 500);
+	if (skip) {
+		return true;
+	}
+	return false;	
 }

@@ -1,5 +1,7 @@
-
-void snake() {
+/*
+	IJnimation snake by realitygaps
+*/
+int snake() {
 	byte snake1[8]={
 		B00000000,
 		B00000000,
@@ -304,137 +306,141 @@ void snake() {
 	bool skip;
 	skip = render(snake1, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake2, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake3, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake4, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake5, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake6, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake7, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake8, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake9, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake10, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake11, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake12, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake13, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake14, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake15, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake16, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake17, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake18, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake19, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake20, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake21, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake22, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake23, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake24, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake25, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake26, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake27, 200);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake28, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake29, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake30, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake29, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake30, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake29, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(snake30, 200);
+	if (skip) {
+		return true;
+	}
+	return false;
 }
 
 

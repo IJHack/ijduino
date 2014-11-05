@@ -1,5 +1,7 @@
-
-void ijhacklogo() {
+/*
+	IJnimation IJHACK by Einstein, damnlie, the_JinX	
+*/
+int ijhacklogo() {
 	/* here is the data for the characters */
 	byte ij[8]={
 		B11000011,
@@ -55,19 +57,23 @@ void ijhacklogo() {
 	bool skip;
 	skip = render(ij, 500);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(h, 500);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(a, 500);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(c, 500);
 	if (skip) {
-		return;
+		return true;
 	}
-	render(k, 500);
+	skip = render(k, 500);
+	if (skip) {
+		return true;
+	}
+	return false;
 }

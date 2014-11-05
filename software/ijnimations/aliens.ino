@@ -1,5 +1,7 @@
-
-void aliens() {
+/*
+	IJnimation Aliens by Einstein
+*/
+int aliens() {
 
 	byte alien1[8] = {
 
@@ -252,74 +254,76 @@ void aliens() {
 	bool skip;
 	skip = render(alien1, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(alien2, 200);
 	if (skip) {
-		return;
+		return true;
 	} skip = render(alien3, 200);
 	if (skip) {
-		return;
+		return true;
 	} skip = render(alien4, 200);
 	if (skip) {
-		return;
+		return true;
 	} skip = render(alien5, 200);
 	if (skip) {
-		return;
+		return true;
 	} skip = render(alien6, 200);
 	if (skip) {
-		return;
+		return true;
 	} skip = render(alien7, 200);
 	if (skip) {
-		return;
+		return true;
 	} skip = render(alien8, 200);
 	if (skip) {
-		return;
+		return true;
 	} skip = render(alien9, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(alien10, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(alien11, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(alien12, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(alien13, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(alien14, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(alien15, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(alien16, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(alien17, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(alien18, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(alien19, 200);
 	if (skip) {
-		return;
+		return true;
 	}
-
-	render(alien20, 200);
-
+	skip = render(alien20, 200);
+	if (skip) {
+		return true;
+	}
+	return false;
 }

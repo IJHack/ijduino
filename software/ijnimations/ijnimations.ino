@@ -17,12 +17,12 @@ LedControl lc=LedControl(20,5,21,1);
 int lowPin = 11;             /* ground pin for the buton ;-) */
 int buttonPin = 9;           /* choose the input pin for the pushbutton */
 
-const int animations = 21;         /* the number of animations we have */
-void (*ijnimations[animations])() = {
-                          ijhacklogo, ghost, invader, heart, invadesquid, jumper, ijlogowink, 
-                          heartbeat, eq, invaderagain, pong, snake, arrows, directions,
-                          packman, diagonals, waterdrip, aliens, blockanim, pulse, tewdoodles
-                        };
+const int animations = 21;
+int (*ijnimations[animations])() = {
+	ijhacklogo, ghost, invader, heart, invadesquid, jumper, ijlogowink, 
+	heartbeat, eq, invaderagain, pong, snake, arrows, directions,
+	packman, diagonals, waterdrip, aliens, blockanim, pulse, tewdoodles
+};
 
 int lastButtonState = LOW;   /* the previous reading from the input pin */
 long lastDebounceTime = 0;   /* the last time the output pin was toggled */
@@ -47,10 +47,22 @@ void setup() {
 }
 
 void loop() {
-	(ijnimations)[animation]();
+	bool skip;
+	if (animation == 0) {
+		for (int all = 0; all < animations; all++) {
+			for (int looper = 0; looper < 3; looper++) {
+				skip = (bool)(ijnimations)[all]();
+				if (skip) {
+					return;
+				}
+			}
+		}
+	} else {
+		(ijnimations)[animation]();
+	}
 }
 
-bool render(byte* frame, int delaytime) {
+int render(byte* frame, long delaytime) {
 	lc.setColumn(0,0,frame[7]);
 	lc.setColumn(0,1,frame[6]);
 	lc.setColumn(0,2,frame[5]);

@@ -1,5 +1,7 @@
-
-void arrows() {
+/*
+	IJnimation Arrows by Realitygaps
+*/
+int arrows() {
 	byte arrowup[8]={
 		B00000000,
 		B00011000,
@@ -44,16 +46,20 @@ void arrows() {
 	bool skip;
 	skip = render(arrowup, 200);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(arrowright, 200);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(arrowdown, 200);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(arrowleft, 200);  
+	if (skip) {
+		return true;
+	}
+	return false;
 }
 
