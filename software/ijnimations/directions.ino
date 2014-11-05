@@ -1,7 +1,7 @@
 /*
 	IJnimation directions by realitygaps
 */
-bool directions() {
+int directions() {
 	byte directions1[8]={
 		B00000000,
 		B00000000,

@@ -1,7 +1,7 @@
 /*
 	IJnimation invader again by realitygaps
 */
-bool invaderagain() {
+int invaderagain() {
 	byte invader1[8]={
 		B00000000,
 		B00000000,

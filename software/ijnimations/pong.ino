@@ -1,7 +1,7 @@
 /*
 	IJnimation pong byrealitygaps
 */
-bool pong() {
+int pong() {
 	byte pong1[8]={
 		B00111000,
 		B00000000,

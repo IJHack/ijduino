@@ -18,7 +18,7 @@ int lowPin = 11;             /* ground pin for the buton ;-) */
 int buttonPin = 9;           /* choose the input pin for the pushbutton */
 
 int animations = 19;
-bool (*ijnimations[19])() = {
+int (*ijnimations[19])() = {
                           ijhacklogo, ghost, invader, heart, invadesquid, jumper, ijlogowink, 
                           heartbeat, eq, invaderagain, pong, snake, arrows, directions,
                           packman, diagonals, waterdrip, aliens, blockanim
@@ -49,9 +49,9 @@ void setup() {
 void loop() {
         bool skip;
         if (animation == 0) {
-          for (int all = 1; all < animations; all++) {
+          for (int all = 0; all < animations; all++) {
             for (int looper = 0; looper < 3; looper++) {
-              skip = (ijnimations)[all]();
+              skip = (bool)(ijnimations)[all]();
               if (skip) {
                 return;
               }
@@ -62,7 +62,7 @@ void loop() {
         }
 }
 
-bool render(byte* frame, int delaytime) {
+int render(byte* frame, long delaytime) {
 	lc.setColumn(0,0,frame[7]);
 	lc.setColumn(0,1,frame[6]);
 	lc.setColumn(0,2,frame[5]);

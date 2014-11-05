@@ -1,7 +1,7 @@
 /*
 	IJnimation blockanim by Einstein
 */
-bool blockanim() {
+int blockanim() {
 
 	byte ba1[8] = {
 		B11111111,

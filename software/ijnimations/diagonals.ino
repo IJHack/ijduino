@@ -1,7 +1,7 @@
 /*
 	IJnimation 'diagonals' by Yvette Cendes
 */
-bool diagonals() {
+int diagonals() {
 	byte diagonal1[8]={B01010101,
 		B10101010,
 		B01010101,

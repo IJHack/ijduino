@@ -1,7 +1,7 @@
 /*
 	IJnimation ghost by realitygaps
 */
-bool ghost() {
+int ghost() {
 
 	byte ghost1[8]={
 		B00000000,

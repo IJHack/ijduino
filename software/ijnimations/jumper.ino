@@ -1,7 +1,7 @@
 /*
 	IJnimation jumper byrealitygaps
 */
-bool jumper() {
+int jumper() {
 	byte jumpdown[8]={
 		B00111100,
 		B00111100,

@@ -1,7 +1,7 @@
 /*
 	IJnimation IJwink by realitygaps, Einstein, the_JinX, damnlie
 */
-void ijlogowink() {
+int ijlogowink() {
 	byte logowink0[8]={
 		B11000011,
 		B11000011,
@@ -45,23 +45,27 @@ void ijlogowink() {
 	bool skip;
 	skip = render(logowink0, 500);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(logowink1, 500);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(logowink0, 500);
 	if (skip) {
-		return;
+		return true;
 	}  
 	skip = render(logowink2, 500);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(logowink0, 500);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(logowink3, 500);  
+	if (skip) {
+		return true;
+	}
+	return false;
 }

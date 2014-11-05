@@ -1,7 +1,7 @@
 /*
 	IJnimation Arrows by Realitygaps
 */
-bool arrows() {
+int arrows() {
 	byte arrowup[8]={
 		B00000000,
 		B00011000,

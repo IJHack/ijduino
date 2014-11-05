@@ -1,7 +1,7 @@
 /*
 	IJnimation invadesuid by realitygaps
 */
-bool invadesquid() {
+int invadesquid() {
 	byte invadesquid[8]={
 		B00011000,
 		B00111100,

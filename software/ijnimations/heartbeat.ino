@@ -1,7 +1,7 @@
 /*
 	IJnimation heartbeat by realitygaps
 */
-bool heartbeat() {
+int heartbeat() {
 	byte heart1[8]={
 		B00000000,
 		B00000100,

@@ -1,7 +1,7 @@
 /*
 	IJnimation Aliens by Einstein
 */
-bool aliens() {
+int aliens() {
 
 	byte alien1[8] = {
 

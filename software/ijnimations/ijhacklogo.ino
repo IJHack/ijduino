@@ -1,7 +1,7 @@
 /*
 	IJnimation IJHACK by Einstein, damnlie, the_JinX	
 */
-bool ijhacklogo() {
+int ijhacklogo() {
 	/* here is the data for the characters */
 	byte ij[8]={
 		B11000011,

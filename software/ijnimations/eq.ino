@@ -1,7 +1,7 @@
 /*
 	IJnimation EQ by realitygaps
 */
-bool eq() {
+int eq() {
 	byte eq1[8]={
 		B00000000,
 		B00001100,

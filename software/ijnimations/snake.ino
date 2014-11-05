@@ -1,7 +1,7 @@
 /*
 	IJnimation snake by realitygaps
 */
-bool snake() {
+int snake() {
 	byte snake1[8]={
 		B00000000,
 		B00000000,

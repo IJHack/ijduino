@@ -1,7 +1,7 @@
 /*
 	IJnimation "packman" by damnlie
 */
-bool packman() {
+int packman() {
 
 	byte packman1[8]={
 		B00000000,

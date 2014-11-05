@@ -1,7 +1,7 @@
 /*
 	IJnimation heart by damnlie
 */
-bool heart() {
+int heart() {
 
 	/* here is the data for the characters */
 	byte heart2[8]={B00000000,
