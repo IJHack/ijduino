@@ -47,7 +47,7 @@ void setup() {
 }
 
 void loop() {
-	(ijnimations)[anicount];
+	(ijnimations)[anicount]();
 }
 
 bool render(byte* animation, int delaytime) {
