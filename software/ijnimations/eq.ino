@@ -155,59 +155,59 @@ bool eq() {
 	bool skip;
 	skip = render(eq1, 50);
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(eq2, 50);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(eq3, 50);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(eq4, 50);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(eq5, 50);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(eq6, 50);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(eq7, 50);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(eq8, 50);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(eq9, 50);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(eq10, 50);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(eq11, 50);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(eq12, 50);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(eq13, 50);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(eq14, 50);  
 	if (skip) {
-		return;
+		return true;
 	}
 	skip = render(eq15, 50);     
         if (skip) {
