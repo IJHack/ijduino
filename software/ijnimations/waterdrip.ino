@@ -1,6 +1,6 @@
 /*
-   IJnimation waterdrip by Einstein
- */
+	IJnimation waterdrip by Einstein
+*/
 void waterdrip() {
 	byte drip1[8] = {
 		B00000000,
