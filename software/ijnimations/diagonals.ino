@@ -2,7 +2,7 @@
 	IJnimation 'diagonals' by Yvette Cendes
 */
 int diagonals() {
-	byte diagonal1[8]={B01010101,
+	const PROGMEM byte diagonal1[8]={B01010101,
 		B10101010,
 		B01010101,
 		B10101010,
@@ -11,7 +11,7 @@ int diagonals() {
 		B01010101,
 		B10101010};
 
-	byte diagonal2[8]={B10101010,
+	const PROGMEM byte diagonal2[8]={B10101010,
 		B01010101,
 		B10101010,
 		B01010101,

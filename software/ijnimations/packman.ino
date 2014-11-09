@@ -3,7 +3,7 @@
 */
 int packman() {
 
-	byte packman1[8]={
+	const PROGMEM byte packman1[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -14,7 +14,7 @@ int packman() {
 		B00000000};
 
 
-	byte packman2[8]={
+	const PROGMEM byte packman2[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -25,7 +25,7 @@ int packman() {
 		B00000000};
 
 
-	byte packman3[8]={
+	const PROGMEM byte packman3[8]={
 		B00000000,
 		B00000000,
 		B10000000,
@@ -37,7 +37,7 @@ int packman() {
 
 
 
-	byte packman4[8]={
+	const PROGMEM byte packman4[8]={
 		B00000000,
 		B10000000,
 		B11000000,
@@ -49,7 +49,7 @@ int packman() {
 
 
 
-	byte packman5[8]={
+	const PROGMEM byte packman5[8]={
 		B00000000,
 		B11000000,
 		B01100000,
@@ -59,7 +59,7 @@ int packman() {
 		B11110000,
 		B11100000};
 
-	byte packman6[8]={
+	const PROGMEM byte packman6[8]={
 		B00000000,
 		B11100000,
 		B11110000,
@@ -70,7 +70,7 @@ int packman() {
 		B11110000};
 
 
-	byte packman7[8]={
+	const PROGMEM byte packman7[8]={
 		B00000000,
 		B01110000,
 		B11111000,
@@ -81,7 +81,7 @@ int packman() {
 		B01111000};
 
 
-	byte packman8[8]={
+	const PROGMEM byte packman8[8]={
 		B00000000,
 		B00111000,
 		B01111100,
@@ -91,7 +91,7 @@ int packman() {
 		B01111110,
 		B00111100};
 
-	byte packman9[8]={
+	const PROGMEM byte packman9[8]={
 		B00000000,
 		B00011100,
 		B00111110,
@@ -102,7 +102,7 @@ int packman() {
 		B00011110};
 
 
-	byte packman10[8]={
+	const PROGMEM byte packman10[8]={
 		B00000000,
 		B00001110,
 		B00011111,
@@ -113,7 +113,7 @@ int packman() {
 		B00001111};
 
 
-	byte packman11[8]={
+	const PROGMEM byte packman11[8]={
 		B00000000,
 		B00000111,
 		B00001111,
@@ -124,7 +124,7 @@ int packman() {
 		B00000111};
 
 
-	byte packman12[8]={
+	const PROGMEM byte packman12[8]={
 		B00000000,
 		B00000011,
 		B00000111,
@@ -136,7 +136,7 @@ int packman() {
 
 
 
-	byte packman13[8]={
+	const PROGMEM byte packman13[8]={
 		B00000000,
 		B00000001,
 		B00000011,
@@ -147,7 +147,7 @@ int packman() {
 		B00000001};
 
 
-	byte packman14[8]={
+	const PROGMEM byte packman14[8]={
 		B00000000,
 		B00000000,
 		B00000001,
@@ -159,7 +159,7 @@ int packman() {
 
 
 
-	byte packman15[8]={
+	const PROGMEM byte packman15[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -170,7 +170,7 @@ int packman() {
 		B00000000};
 
 
-	byte packman16[8]={
+	const PROGMEM byte packman16[8]={
 		B00000000,
 		B00000000,
 		B00000000,

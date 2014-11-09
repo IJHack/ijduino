@@ -3,7 +3,7 @@
 */
 int aliens() {
 
-	byte alien1[8] = {
+	const PROGMEM byte alien1[8] = {
 
 		// Animation bitmaps. Each frame of animation MUST contain
 		// 8 lines of graphics data (there is no error checking for
@@ -26,7 +26,7 @@ int aliens() {
 			//25, // 0.25 seconds
 	};
 
-	byte alien2[8] = {
+	const PROGMEM byte alien2[8] = {
 		B00011000, // This is the second frame for alien #1
 		B00111100,
 		B01111110,
@@ -38,7 +38,7 @@ int aliens() {
 			//25, // 0.25 second delay
 	};
 
-	byte alien3[8] = {
+	const PROGMEM byte alien3[8] = {
 		// Frames 3 & 4 for alien #1 are duplicates of frames 1 & 2.
 		// Rather than list them 'the tall way' again, the lines are merged here...
 		B00011000,
@@ -51,7 +51,7 @@ int aliens() {
 		B10100101
 	};
 
-	byte alien4[8] = {
+	const PROGMEM byte alien4[8] = {
 		B00011000,
 		B00111100,
 		B01111110,
@@ -62,7 +62,7 @@ int aliens() {
 		B01000010
 	};
 
-	byte alien5[8] = {
+	const PROGMEM byte alien5[8] = {
 
 		B00000000, // First frame for alien #2
 		B00111100,
@@ -75,7 +75,7 @@ int aliens() {
 			//25, // 0.25 second delay
 	};
 
-	byte alien6[8] = {
+	const PROGMEM byte alien6[8] = {
 		B00111100, // Second frame for alien #2
 		B01111110,
 		B11011011,
@@ -87,7 +87,7 @@ int aliens() {
 			//25,
 	};
 
-	byte alien7[8] = {
+	const PROGMEM byte alien7[8] = {
 		// Frames 3 & 4 for alien #2 are duplicates of frames 1 & 2
 		B00000000,
 		B00111100,
@@ -99,7 +99,7 @@ int aliens() {
 		B11000011
 	};
 
-	byte alien8[8] = {
+	const PROGMEM byte alien8[8] = {
 		B00111100,
 		B01111110,
 		B11011011,
@@ -110,7 +110,7 @@ int aliens() {
 		B00100100
 	};
 
-	byte alien9[8] = {
+	const PROGMEM byte alien9[8] = {
 
 		B00100100, // First frame for alien #3
 		B00100100,
@@ -123,7 +123,7 @@ int aliens() {
 			//25,
 	};
 
-	byte alien10[8] = {
+	const PROGMEM byte alien10[8] = {
 		B00100100, // Second frame for alien #3
 		B10100101,
 		B11111111,
@@ -135,7 +135,7 @@ int aliens() {
 			//25,
 	};
 
-	byte alien11[8] = {
+	const PROGMEM byte alien11[8] = {
 		// Frames are duplicated as with prior aliens
 		B00100100,
 		B00100100,
@@ -147,7 +147,7 @@ int aliens() {
 		B00100100
 	};
 
-	byte alien12[8] = {
+	const PROGMEM byte alien12[8] = {
 		B00100100,
 		B10100101,
 		B11111111,
@@ -158,7 +158,7 @@ int aliens() {
 		B01000010
 	};
 
-	byte alien13[8] = {
+	const PROGMEM byte alien13[8] = {
 		B00111100, // First frame for alien #4
 		B01111110,
 		B10110011,
@@ -170,7 +170,7 @@ int aliens() {
 			//12, // ~1/8 second delay
 	};
 
-	byte alien14[8] = {
+	const PROGMEM byte alien14[8] = {
 		B00111100, // Second frame for alien #4
 		B01111110,
 		B10011001,
@@ -182,7 +182,7 @@ int aliens() {
 			//12,
 	};
 
-	byte alien15[8] = {
+	const PROGMEM byte alien15[8] = {
 		B00111100, // Third frame for alien #4 (NOT a repeat of frame 1)
 		B01111110,
 		B11001101,
@@ -194,7 +194,7 @@ int aliens() {
 			//12,
 	};
 
-	byte alien16[8] = {
+	const PROGMEM byte alien16[8] = {
 		B00111100, // Fourth frame for alien #4 (NOT a repeat of frame 2)
 		B01111110,
 		B11100111,
@@ -206,7 +206,7 @@ int aliens() {
 			//12,
 	};
 
-	byte alien17[8] = {
+	const PROGMEM byte alien17[8] = {
 		// Frames 5-8 are duplicates of 1-4, lines merged for brevity
 		B00111100,
 		B01111110,
@@ -218,7 +218,7 @@ int aliens() {
 		B00000000
 	};
 
-	byte alien18[8] = {
+	const PROGMEM byte alien18[8] = {
 		B00111100,
 		B01111110,
 		B10011001,
@@ -229,7 +229,7 @@ int aliens() {
 		B00001000
 	};
 
-	byte alien19[8] = {
+	const PROGMEM byte alien19[8] = {
 		B00111100,
 		B01111110,
 		B11001101,
@@ -240,7 +240,7 @@ int aliens() {
 		B00001000
 	};
 
-	byte alien20[8] = {
+	const PROGMEM byte alien20[8] = {
 		B00111100,
 		B01111110,
 		B11100111,

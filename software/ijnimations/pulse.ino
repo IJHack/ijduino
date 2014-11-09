@@ -2,7 +2,7 @@
 	IJnimation pulse by Einstein
 */
 int pulse() {
-	byte bigHeart[] = {
+	const PROGMEM byte bigHeart[] = {
 		B01100110,
 		B11111111,
 		B11111111,
@@ -12,7 +12,7 @@ int pulse() {
 		B00011000,
 		B00000000};
 
-	byte smallHeart[] = {
+	const PROGMEM byte smallHeart[] = {
 		B00000000,
 		B00000000,
 		B00010100,

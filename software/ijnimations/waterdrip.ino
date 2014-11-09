@@ -2,7 +2,7 @@
 	IJnimation waterdrip by Einstein
 */
 int waterdrip() {
-	byte drip1[8] = {
+	const PROGMEM byte drip1[8] = {
 		B00000000,
 		B00000000,
 		B00000000,
@@ -14,7 +14,7 @@ int waterdrip() {
 	};
 
 
-	byte drip2[8] = {
+	const PROGMEM byte drip2[8] = {
 		B00011000,
 		B00000000,
 		B00000000,
@@ -25,7 +25,7 @@ int waterdrip() {
 		B11111111
 	};
 
-	byte drip3[8] = {
+	const PROGMEM byte drip3[8] = {
 		B00011000,
 		B00011000,
 		B00000000,
@@ -36,7 +36,7 @@ int waterdrip() {
 		B11111111
 	};
 
-	byte drip4[8] = {
+	const PROGMEM byte drip4[8] = {
 		B00000000,
 		B00011000,
 		B00011000,
@@ -47,7 +47,7 @@ int waterdrip() {
 		B11111111
 	};
 
-	byte drip5[8] = {
+	const PROGMEM byte drip5[8] = {
 		B00000000,
 		B00000000,
 		B00011000,
@@ -58,7 +58,7 @@ int waterdrip() {
 		B11111111
 	};
 
-	byte drip6[8] = {
+	const PROGMEM byte drip6[8] = {
 		B00000000,
 		B00000000,
 		B00000000,
@@ -68,7 +68,7 @@ int waterdrip() {
 		B11111111,
 		B11111111
 	};
-	byte drip7[8] = {
+	const PROGMEM byte drip7[8] = {
 		B00000000,
 		B00000000,
 		B00000000,
@@ -79,7 +79,7 @@ int waterdrip() {
 		B11111111
 	};
 
-	byte drip8[8] = {
+	const PROGMEM byte drip8[8] = {
 		B00000000,
 		B00000000,
 		B00000000,
@@ -90,7 +90,7 @@ int waterdrip() {
 		B11111111
 	};
 
-	byte drip9[8] = {
+	const PROGMEM byte drip9[8] = {
 		B00000000,
 		B00000000,
 		B00000000,
@@ -101,7 +101,7 @@ int waterdrip() {
 		B11111111
 	};
 
-	byte drip10[8] = {
+	const PROGMEM byte drip10[8] = {
 		B00000000,
 		B00000000,
 		B00000000,
@@ -112,7 +112,7 @@ int waterdrip() {
 		B11111111
 	};
 
-	byte drip11[8] = {
+	const PROGMEM byte drip11[8] = {
 		B00000000,
 		B00000000,
 		B00000000,

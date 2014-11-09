@@ -2,7 +2,7 @@
 	IJnimation Arrows by Realitygaps
 */
 int arrows() {
-	byte arrowup[8]={
+	const PROGMEM byte arrowup[8]={
 		B00000000,
 		B00011000,
 		B00111100,
@@ -12,7 +12,7 @@ int arrows() {
 		B00011000,
 		B00000000};
 
-	byte arrowdown[8]={
+	const PROGMEM byte arrowdown[8]={
 		B00000000,
 		B00011000,
 		B00011000,
@@ -22,7 +22,7 @@ int arrows() {
 		B00011000,
 		B00000000};
 
-	byte arrowright[8]={
+	const PROGMEM byte arrowright[8]={
 		B00000000,
 		B00001000,
 		B00001100,
@@ -33,7 +33,7 @@ int arrows() {
 		B00000000};
 
 
-	byte arrowleft[8]={
+	const PROGMEM byte arrowleft[8]={
 		B00000000,
 		B00010000,
 		B00110000,

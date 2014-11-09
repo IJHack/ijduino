@@ -62,7 +62,7 @@ void loop() {
 	}
 }
 
-int render(byte* frame, long delaytime) {
+int render(const byte* frame, long delaytime) {
 	lc.setColumn(0,0,frame[7]);
 	lc.setColumn(0,1,frame[6]);
 	lc.setColumn(0,2,frame[5]);

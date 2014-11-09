@@ -2,7 +2,7 @@
 	IJnimation pong byrealitygaps
 */
 int pong() {
-	byte pong1[8]={
+	const PROGMEM byte pong1[8]={
 		B00111000,
 		B00000000,
 		B00000000,
@@ -12,7 +12,7 @@ int pong() {
 		B00000000,
 		B00011100};
 
-	byte pong2[8]={
+	const PROGMEM byte pong2[8]={
 		B00111000,
 		B00000000,
 		B00000000,
@@ -22,7 +22,7 @@ int pong() {
 		B00000000,
 		B00001110};
 
-	byte pong3[8]={
+	const PROGMEM byte pong3[8]={
 		B00111000,
 		B00000000,
 		B00000000,
@@ -33,7 +33,7 @@ int pong() {
 		B00000111};
 
 
-	byte pong4[8]={
+	const PROGMEM byte pong4[8]={
 		B00111000,
 		B00000000,
 		B00000000,
@@ -43,7 +43,7 @@ int pong() {
 		B00000000,
 		B00000111};
 
-	byte pong5[8]={
+	const PROGMEM byte pong5[8]={
 		B00111000,
 		B00000000,
 		B00000000,
@@ -53,7 +53,7 @@ int pong() {
 		B00000000,
 		B00000111};
 
-	byte pong6[8]={
+	const PROGMEM byte pong6[8]={
 		B00111000,
 		B00000000,
 		B00000000,
@@ -63,7 +63,7 @@ int pong() {
 		B00000000,
 		B00001110};
 
-	byte pong7[8]={
+	const PROGMEM byte pong7[8]={
 		B01110000,
 		B00000000,
 		B00100000,
@@ -73,7 +73,7 @@ int pong() {
 		B00000000,
 		B00001110};
 
-	byte pong8[8]={
+	const PROGMEM byte pong8[8]={
 		B11100000,
 		B01000000,
 		B00000000,
@@ -83,7 +83,7 @@ int pong() {
 		B00000000,
 		B00011100};
 
-	byte pong9[8]={
+	const PROGMEM byte pong9[8]={
 		B11100000,
 		B00000000,
 		B00100000,
@@ -93,7 +93,7 @@ int pong() {
 		B00000000,
 		B00011100};
 
-	byte pong10[8]={
+	const PROGMEM byte pong10[8]={
 		B11100000,
 		B00000000,
 		B00000000,
@@ -103,7 +103,7 @@ int pong() {
 		B00000000,
 		B00111000};
 
-	byte pong11[8]={
+	const PROGMEM byte pong11[8]={
 		B01110000,
 		B00000000,
 		B00000000,
@@ -113,7 +113,7 @@ int pong() {
 		B00000000,
 		B01110000};
 
-	byte pong12[8]={
+	const PROGMEM byte pong12[8]={
 		B01110000,
 		B00000000,
 		B00000000,
@@ -123,7 +123,7 @@ int pong() {
 		B00000000,
 		B00111000};
 
-	byte pong13[8]={
+	const PROGMEM byte pong13[8]={
 		B01110000,
 		B00000000,
 		B00000000,
@@ -133,7 +133,7 @@ int pong() {
 		B00000010,
 		B00011100};
 
-	byte pong14[8]={
+	const PROGMEM byte pong14[8]={
 		B00111000,
 		B00000000,
 		B00000000,

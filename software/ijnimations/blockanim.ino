@@ -3,7 +3,7 @@
 */
 int blockanim() {
 
-	byte ba1[8] = {
+	const PROGMEM byte ba1[8] = {
 		B11111111,
 		B11111111,
 		B11111111,
@@ -14,7 +14,7 @@ int blockanim() {
 		B11111111
 	};
 
-	byte ba2[8] = {
+	const PROGMEM byte ba2[8] = {
 		B00000000,
 		B01111110,
 		B01111110,
@@ -25,7 +25,7 @@ int blockanim() {
 		B00000000
 	};
 
-	byte ba3[8] = {
+	const PROGMEM byte ba3[8] = {
 		B00000000,
 		B00000000,
 		B00111100,
@@ -36,7 +36,7 @@ int blockanim() {
 		B00000000
 	};
 
-	byte ba4[8] = {
+	const PROGMEM byte ba4[8] = {
 		B00000000,
 		B00000000,
 		B00000000,
@@ -47,7 +47,7 @@ int blockanim() {
 		B00000000
 	};
 
-	byte ba5[8] = {
+	const PROGMEM byte ba5[8] = {
 		B00000000,
 		B00000000,
 		B00000000,
@@ -58,7 +58,7 @@ int blockanim() {
 		B00000000
 	};
 
-	byte ba6[8] = {
+	const PROGMEM byte ba6[8] = {
 		B00000000,
 		B00000000,
 		B00000000,
@@ -69,7 +69,7 @@ int blockanim() {
 		B00000000
 	};
 
-	byte ba7[8] = {
+	const PROGMEM byte ba7[8] = {
 		B00000000,
 		B00000000,
 		B00111100,
@@ -80,7 +80,7 @@ int blockanim() {
 		B00000000
 	};
 
-	byte ba8[8] = {
+	const PROGMEM byte ba8[8] = {
 
 		B00000000,
 		B01111110,
@@ -92,7 +92,7 @@ int blockanim() {
 		B00000000
 	};
 
-	byte ba9[8] = {
+	const PROGMEM byte ba9[8] = {
 
 		B11111111,
 		B11111111,
@@ -104,7 +104,7 @@ int blockanim() {
 		B11111111
 	};
 
-	byte ba10[8] = {
+	const PROGMEM byte ba10[8] = {
 
 		B11111111,
 		B11111111,

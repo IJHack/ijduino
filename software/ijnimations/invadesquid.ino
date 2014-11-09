@@ -2,7 +2,7 @@
 	IJnimation invadesuid by realitygaps
 */
 int invadesquid() {
-	byte invadesquid[8]={
+	const PROGMEM byte invadesquid[8]={
 		B00011000,
 		B00111100,
 		B01111110,
@@ -12,7 +12,7 @@ int invadesquid() {
 		B10000001,
 		B01000010};
 
-	byte devadesquid[8]={
+	const PROGMEM byte devadesquid[8]={
 		B00011000,
 		B00111100,
 		B01111110,

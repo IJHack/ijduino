@@ -2,7 +2,7 @@
 	First IJnimation "invader" by realitygaps
 */
 int invader() {
-	byte invade[8]={
+	const PROGMEM byte invade[8]={
 		B00100100,
 		B00100100,
 		B01111110,
@@ -12,7 +12,7 @@ int invader() {
 		B10100101,
 		B00100100};
 
-	byte devade[8]={
+	const PROGMEM byte devade[8]={
 		B00100100,
 		B10100101,
 		B11111111,

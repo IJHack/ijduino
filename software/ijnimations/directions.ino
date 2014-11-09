@@ -2,7 +2,7 @@
 	IJnimation directions by realitygaps
 */
 int directions() {
-	byte directions1[8]={
+	const PROGMEM byte directions1[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -12,7 +12,7 @@ int directions() {
 		B00000000,
 		B00000000};
 
-	byte directions2[8]={
+	const PROGMEM byte directions2[8]={
 		B00000000,
 		B00000000,
 		B10000000,
@@ -22,7 +22,7 @@ int directions() {
 		B00000000,
 		B00000000};
 
-	byte directions3[8]={
+	const PROGMEM byte directions3[8]={
 		B00000000,
 		B10000000,
 		B01000000,
@@ -32,7 +32,7 @@ int directions() {
 		B00000000,
 		B00000000};
 
-	byte directions4[8]={
+	const PROGMEM byte directions4[8]={
 		B10000000,
 		B01000000,
 		B00100000,
@@ -42,7 +42,7 @@ int directions() {
 		B10000000,
 		B00000000};
 
-	byte directions5[8]={
+	const PROGMEM byte directions5[8]={
 		B01000000,
 		B00100000,
 		B00010000,
@@ -52,7 +52,7 @@ int directions() {
 		B01000000,
 		B00000000};
 
-	byte directions6[8]={
+	const PROGMEM byte directions6[8]={
 		B00100000,
 		B00010000,
 		B00001000,
@@ -62,7 +62,7 @@ int directions() {
 		B00100000,
 		B00000000};
 
-	byte directions7[8]={
+	const PROGMEM byte directions7[8]={
 		B00010000,
 		B00001000,
 		B00000100,
@@ -72,7 +72,7 @@ int directions() {
 		B00010000,
 		B00000000};
 
-	byte directions8[8]={
+	const PROGMEM byte directions8[8]={
 		B00001000,
 		B00000100,
 		B00000010,
@@ -82,7 +82,7 @@ int directions() {
 		B00001000,
 		B00000000};
 
-	byte directions9[8]={
+	const PROGMEM byte directions9[8]={
 		B00000100,
 		B00000010,
 		B00000001,
@@ -92,7 +92,7 @@ int directions() {
 		B00000100,
 		B00000000};
 
-	byte directions10[8]={
+	const PROGMEM byte directions10[8]={
 		B00000010,
 		B00000001,
 		B00000000,
@@ -102,7 +102,7 @@ int directions() {
 		B00000010,
 		B00000000};
 
-	byte directions11[8]={
+	const PROGMEM byte directions11[8]={
 		B00000001,
 		B00000000,
 		B00000000,
@@ -112,7 +112,7 @@ int directions() {
 		B00000001,
 		B00000000};
 
-	byte directions12[8]={
+	const PROGMEM byte directions12[8]={
 		B00000000,
 		B00000000,
 		B00000000,

@@ -4,7 +4,7 @@
 int heart() {
 
 	/* here is the data for the characters */
-	byte heart2[8]={B00000000,
+	const PROGMEM byte heart2[8]={B00000000,
 		B01100110,
 		B10011001,
 		B10000001,
@@ -14,7 +14,7 @@ int heart() {
 		B00011000};
 
 	/* here is the data for the characters */
-	byte heart1[8]={
+	const PROGMEM byte heart1[8]={
 		B00000000,
 		B01100110,
 		B11111111,
