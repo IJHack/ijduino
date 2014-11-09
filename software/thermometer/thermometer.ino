@@ -1,3 +1,15 @@
+#include <OneWire.h>
+#include <DallasTemperature.h>
+
+// Data wire is plugged into port 2 on the Arduino
+#define ONE_WIRE_BUS 2
+
+// Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
+OneWire oneWire(ONE_WIRE_BUS);
+
+// Pass our oneWire reference to Dallas Temperature. 
+DallasTemperature sensors(&oneWire);
+
 //We always have to include the library
 #include "LedControl.h"
 #include "font.h"
@@ -18,7 +30,8 @@ void setup() {
     /* and clear the display */
     lc.clearDisplay(address);
   }
-
+  // Start up the library
+  sensors.begin();
 }
 
 // Change these values to adjust scroll speeds and animation iterations
@@ -148,8 +161,9 @@ void loop() {
       writeArduinoOnMatrix(); 
       delay(TEXT_SCROLL_SPEED);
     
+      sensors.requestTemperatures(); // Send the command to get temperatures
 
-    
+      sprintf(message_00, "Temp: %dC", sensors.getTempCByIndex(0));
 
     //6
     for (i = 0; i < MAX_MESSAGES; i++) {
