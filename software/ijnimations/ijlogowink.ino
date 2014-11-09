@@ -2,7 +2,7 @@
 	IJnimation IJwink by realitygaps, Einstein, the_JinX, damnlie
 */
 int ijlogowink() {
-	const PROGMEM byte logowink0[8]={
+	const byte logowink0[8]={
 		B11000011,
 		B11000011,
 		B00000000,
@@ -12,7 +12,7 @@ int ijlogowink() {
 		B01111110,
 		B00111100};
 
-	const PROGMEM byte logowink1[8]={  
+	const byte logowink1[8]={  
 		B00000011,
 		B00000011,
 		B00000000,
@@ -22,7 +22,7 @@ int ijlogowink() {
 		B01111110,
 		B00111100};
 
-	const PROGMEM byte logowink2[8]={  
+	const byte logowink2[8]={  
 		B11000000,
 		B11000000,
 		B00000000,
@@ -32,7 +32,7 @@ int ijlogowink() {
 		B01111110,
 		B00111100};
 
-	const PROGMEM byte logowink3[8]={  
+	const byte logowink3[8]={  
 		B11000011,
 		B11000011,
 		B00000000,

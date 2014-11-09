@@ -3,7 +3,7 @@
 */
 int ijhacklogo() {
 	/* here is the data for the characters */
-	const PROGMEM byte ij[8]={
+	const byte ij[8]={
 		B11000011,
 		B11000011,
 		B00000000,
@@ -13,7 +13,7 @@ int ijhacklogo() {
 		B01111110,
 		B00111100};
 
-	const PROGMEM byte h[8]={
+	const byte h[8]={
 		B11000011,
 		B11000011,
 		B11000011,
@@ -23,7 +23,7 @@ int ijhacklogo() {
 		B11000011,
 		B11000011 };
 
-	const PROGMEM byte a[8]={
+	const byte a[8]={
 		B00011000,
 		B00111100,
 		B01100110,
@@ -33,7 +33,7 @@ int ijhacklogo() {
 		B11000011,
 		B11000011 };
 
-	const PROGMEM byte c[8]={
+	const byte c[8]={
 		B01111110,
 		B11111111,
 		B11000011,
@@ -43,7 +43,7 @@ int ijhacklogo() {
 		B11111111,
 		B01111110 };
 
-	const PROGMEM byte k[8]={
+	const byte k[8]={
 		B11000111,
 		B11011110,
 		B11111100,

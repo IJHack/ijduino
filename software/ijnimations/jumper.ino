@@ -2,7 +2,7 @@
 	IJnimation jumper byrealitygaps
 */
 int jumper() {
-	const PROGMEM byte jumpdown[8]={
+	const byte jumpdown[8]={
 		B00111100,
 		B00111100,
 		B00011000,
@@ -12,7 +12,7 @@ int jumper() {
 		B00100100,
 		B00100100};
 
-	const PROGMEM byte jumpup[8]={
+	const byte jumpup[8]={
 		B00111100,
 		B01011010,
 		B00111100,

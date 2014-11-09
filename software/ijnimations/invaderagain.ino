@@ -2,7 +2,7 @@
 	IJnimation invader again by realitygaps
 */
 int invaderagain() {
-	const PROGMEM byte invader1[8]={
+	const byte invader1[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -12,7 +12,7 @@ int invaderagain() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte invader2[8]={
+	const byte invader2[8]={
 		B00000000,
 		B00000000,
 		B10000000,
@@ -22,7 +22,7 @@ int invaderagain() {
 		B10000000,
 		B10000000};
 
-	const PROGMEM byte invader3[8]={
+	const byte invader3[8]={
 		B00000000,
 		B10000000,
 		B11000000,
@@ -32,7 +32,7 @@ int invaderagain() {
 		B01000000,
 		B11000000};
 
-	const PROGMEM byte invader4[8]={
+	const byte invader4[8]={
 		B10000000,
 		B11000000,
 		B01100000,
@@ -42,7 +42,7 @@ int invaderagain() {
 		B00100000,
 		B01100000};
 
-	const PROGMEM byte invader5[8]={
+	const byte invader5[8]={
 		B01000000,
 		B11100000,
 		B10110000,
@@ -52,7 +52,7 @@ int invaderagain() {
 		B00010000,
 		B00110000};
 
-	const PROGMEM byte invader6[8]={
+	const byte invader6[8]={
 		B00100000,
 		B11110000,
 		B11011000,
@@ -62,7 +62,7 @@ int invaderagain() {
 		B00001000,
 		B00011000};
 
-	const PROGMEM byte invader7[8]={
+	const byte invader7[8]={
 		B10010000,
 		B11111000,
 		B01101100,
@@ -72,7 +72,7 @@ int invaderagain() {
 		B00000100,
 		B00001100};
 
-	const PROGMEM byte invader8[8]={
+	const byte invader8[8]={
 		B01001000,
 		B11111100,
 		B10110110,
@@ -82,7 +82,7 @@ int invaderagain() {
 		B00000010,
 		B10000110};
 
-	const PROGMEM byte invader9[8]={
+	const byte invader9[8]={
 		B00100100,
 		B01111110,
 		B11011011,
@@ -92,7 +92,7 @@ int invaderagain() {
 		B10000001,
 		B11000011};
 
-	const PROGMEM byte invader9a[8]={
+	const byte invader9a[8]={
 		B00100100,
 		B00011000,
 		B01111110,
@@ -102,7 +102,7 @@ int invaderagain() {
 		B10011001,
 		B11000011};
 
-	const PROGMEM byte invader10[8]={
+	const byte invader10[8]={
 		B00010010,
 		B00111111,
 		B01101101,
@@ -113,7 +113,7 @@ int invaderagain() {
 		B01100001};
 
 
-	const PROGMEM byte invader11[8]={
+	const byte invader11[8]={
 		B00001001,
 		B00011111,
 		B00110110,
@@ -125,7 +125,7 @@ int invaderagain() {
 
 
 
-	const PROGMEM byte invader12[8]={
+	const byte invader12[8]={
 		B00000100,
 		B00001111,
 		B00011011,
@@ -135,7 +135,7 @@ int invaderagain() {
 		B00010000,
 		B00011000};
 
-	const PROGMEM byte invader13[8]={
+	const byte invader13[8]={
 		B00000010,
 		B00000111,
 		B00001101,
@@ -146,7 +146,7 @@ int invaderagain() {
 		B00001100};
 
 
-	const PROGMEM byte invader14[8]={
+	const byte invader14[8]={
 		B00000001,
 		B00000011,
 		B00000110,
@@ -156,7 +156,7 @@ int invaderagain() {
 		B00000100,
 		B00000110};
 
-	const PROGMEM byte invader15[8]={
+	const byte invader15[8]={
 		B00000000,
 		B00000001,
 		B00000011,
@@ -166,7 +166,7 @@ int invaderagain() {
 		B00000010,
 		B00000011};
 
-	const PROGMEM byte invader16[8]={
+	const byte invader16[8]={
 		B00000000,
 		B00000000,
 		B00000001,

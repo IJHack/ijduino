@@ -6,7 +6,7 @@
 	By tew
 */
 int tewdoodles() {
-	const PROGMEM byte tewdoodle1[8]=
+	const byte tewdoodle1[8]=
 	{
 		B11111111,
 		B10000001,
@@ -18,7 +18,7 @@ int tewdoodles() {
 		B11111111
 	};
 
-	const PROGMEM byte tewdoodle2[8]={
+	const byte tewdoodle2[8]={
 		B10000001,
 		B01111110,
 		B01000010,
@@ -28,7 +28,7 @@ int tewdoodles() {
 		B01111110,
 		B10000001  };
 
-	const PROGMEM byte tewdoodle3[8]={
+	const byte tewdoodle3[8]={
 		B10000001,
 		B01000010,
 		B00111100,
@@ -38,7 +38,7 @@ int tewdoodles() {
 		B01000010,
 		B10000001  };
 
-	const PROGMEM byte tewdoodle4[8]={
+	const byte tewdoodle4[8]={
 		B10000001,
 		B01000010,
 		B00100100,
@@ -48,7 +48,7 @@ int tewdoodles() {
 		B01000010,
 		B10000001  };
 
-	const PROGMEM byte tewdoodle5[8]={
+	const byte tewdoodle5[8]={
 		B00000000,
 		B01000010,
 		B00100100,
@@ -58,7 +58,7 @@ int tewdoodles() {
 		B01000010,
 		B00000000  };
 
-	const PROGMEM byte tewdoodle6[8]={
+	const byte tewdoodle6[8]={
 		B00000000,
 		B00000000,
 		B00100100,
@@ -68,7 +68,7 @@ int tewdoodles() {
 		B00000000,
 		B00000000  };
 
-	const PROGMEM byte tewdoodle7[8]={
+	const byte tewdoodle7[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -78,7 +78,7 @@ int tewdoodles() {
 		B00000000,
 		B00000000  };
 
-	const PROGMEM byte tewdoodle8[8]={
+	const byte tewdoodle8[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -88,7 +88,7 @@ int tewdoodles() {
 		B00000000,
 		B00000000  };
 
-	const PROGMEM byte tewdoodle9[8]={
+	const byte tewdoodle9[8]={
 		B00000000,
 		B00000000,
 		B00000000,

@@ -2,7 +2,7 @@
 	IJnimation heartbeat by realitygaps
 */
 int heartbeat() {
-	const PROGMEM byte heart1[8]={
+	const byte heart1[8]={
 		B00000000,
 		B00000100,
 		B00000110,
@@ -12,7 +12,7 @@ int heartbeat() {
 		B00001100,
 		B00000100};
 
-	const PROGMEM byte heart2[8]={
+	const byte heart2[8]={
 		B00000000,
 		B00000010,
 		B00000011,
@@ -22,7 +22,7 @@ int heartbeat() {
 		B00000110,
 		B00000010};
 
-	const PROGMEM byte heart3[8]={
+	const byte heart3[8]={
 		B00000000,
 		B00000001,
 		B00000001,
@@ -32,7 +32,7 @@ int heartbeat() {
 		B00000011,
 		B00000001};
 
-	const PROGMEM byte heart4[8]={
+	const byte heart4[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -42,7 +42,7 @@ int heartbeat() {
 		B00000001,
 		B00000000};
 
-	const PROGMEM byte heart5[8]={
+	const byte heart5[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -52,7 +52,7 @@ int heartbeat() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte heart6[8]={
+	const byte heart6[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -62,7 +62,7 @@ int heartbeat() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte heart7[8]={
+	const byte heart7[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -72,7 +72,7 @@ int heartbeat() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte heart8[8]={
+	const byte heart8[8]={
 		B00000000,
 		B00000000,
 		B10000000,
@@ -82,7 +82,7 @@ int heartbeat() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte heart9[8]={
+	const byte heart9[8]={
 		B00000000,
 		B10000000,
 		B11000000,
@@ -92,7 +92,7 @@ int heartbeat() {
 		B10000000,
 		B10000000};
 
-	const PROGMEM byte heart10[8]={
+	const byte heart10[8]={
 		B00000000,
 		B01000000,
 		B01100000,
@@ -102,7 +102,7 @@ int heartbeat() {
 		B11000000,
 		B01000000};
 
-	const PROGMEM byte heart11[8]={
+	const byte heart11[8]={
 		B00000000,
 		B00100000,
 		B00110000,
@@ -112,7 +112,7 @@ int heartbeat() {
 		B01100000,
 		B00100000};
 
-	const PROGMEM byte heart12[8]={
+	const byte heart12[8]={
 		B00000000,
 		B00010000,
 		B00011000,
@@ -122,7 +122,7 @@ int heartbeat() {
 		B00110000,
 		B00010000};
 
-	const PROGMEM byte heart13[8]={
+	const byte heart13[8]={
 		B00000000,
 		B00001000,
 		B00001100,

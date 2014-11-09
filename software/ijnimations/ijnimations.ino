@@ -25,8 +25,8 @@ int (*ijnimations[animations])() = {
 };
 
 int lastButtonState = LOW;   /* the previous reading from the input pin */
-long lastDebounceTime = 0;   /* the last time the output pin was toggled */
-long debounceDelay = 50;     /* the debounce time; increase if the output flickers */
+unsigned long lastDebounceTime = 0;   /* the last time the output pin was toggled */
+unsigned long debounceDelay = 50;     /* the debounce time; increase if the output flickers */
 int animation = 0;
 int buttonState = LOW;
 
@@ -72,7 +72,7 @@ int render(const byte* frame, long delaytime) {
 	lc.setColumn(0,6,frame[1]);
 	lc.setColumn(0,7,frame[0]);
 
-	long startTime = millis();
+	unsigned long startTime = millis();
 	while ((startTime + delaytime) > millis()){
 
 		// read the state of the switch into a local variable:

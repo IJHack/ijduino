@@ -2,7 +2,7 @@
 	IJnimation snake by realitygaps
 */
 int snake() {
-	const PROGMEM byte snake1[8]={
+	const byte snake1[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -12,7 +12,7 @@ int snake() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte snake2[8]={
+	const byte snake2[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -22,7 +22,7 @@ int snake() {
 		B00000001,
 		B00000000};
 
-	const PROGMEM byte snake3[8]={
+	const byte snake3[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -32,7 +32,7 @@ int snake() {
 		B00000011,
 		B00000000};
 
-	const PROGMEM byte snake4[8]={
+	const byte snake4[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -42,7 +42,7 @@ int snake() {
 		B00000111,
 		B00000000};
 
-	const PROGMEM byte snake5[8]={
+	const byte snake5[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -52,7 +52,7 @@ int snake() {
 		B00001110,
 		B00000000};
 
-	const PROGMEM byte snake6[8]={
+	const byte snake6[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -62,7 +62,7 @@ int snake() {
 		B00011100,
 		B00000000};
 
-	const PROGMEM byte snake7[8]={
+	const byte snake7[8]={
 		B00000000,
 		B00000000,
 		B01000000,
@@ -72,7 +72,7 @@ int snake() {
 		B00111000,
 		B00000000};
 
-	const PROGMEM byte snake8[8]={
+	const byte snake8[8]={
 		B00000000,
 		B00000000,
 		B01000000,
@@ -82,7 +82,7 @@ int snake() {
 		B00110000,
 		B00000000};
 
-	const PROGMEM byte snake9[8]={
+	const byte snake9[8]={
 		B00000000,
 		B00000000,
 		B01000000,
@@ -92,7 +92,7 @@ int snake() {
 		B00100000,
 		B00000000};
 
-	const PROGMEM byte snake10[8]={
+	const byte snake10[8]={
 		B00000000,
 		B00000000,
 		B01000000,
@@ -102,7 +102,7 @@ int snake() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte snake11[8]={
+	const byte snake11[8]={
 		B00000000,
 		B00000000,
 		B01100000,
@@ -112,7 +112,7 @@ int snake() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte snake12[8]={
+	const byte snake12[8]={
 		B00000000,
 		B01000000,
 		B01100000,
@@ -122,7 +122,7 @@ int snake() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte snake13[8]={
+	const byte snake13[8]={
 		B01000000,
 		B01000000,
 		B01100000,
@@ -132,7 +132,7 @@ int snake() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte snake14[8]={
+	const byte snake14[8]={
 		B01100000,
 		B01000000,
 		B01100000,
@@ -142,7 +142,7 @@ int snake() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte snake15[8]={
+	const byte snake15[8]={
 		B01110000,
 		B01000000,
 		B01000000,
@@ -152,7 +152,7 @@ int snake() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte snake16[8]={
+	const byte snake16[8]={
 		B01111000,
 		B01000000,
 		B00000000,
@@ -162,7 +162,7 @@ int snake() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte snake17[8]={
+	const byte snake17[8]={
 		B01111100,
 		B00000000,
 		B00000000,
@@ -172,7 +172,7 @@ int snake() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte snake18[8]={
+	const byte snake18[8]={
 		B00111100,
 		B00000100,
 		B00000000,
@@ -182,7 +182,7 @@ int snake() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte snake19[8]={
+	const byte snake19[8]={
 		B00011100,
 		B00000100,
 		B00000100,
@@ -192,7 +192,7 @@ int snake() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte snake20[8]={
+	const byte snake20[8]={
 		B00001100,
 		B00000100,
 		B00000100,
@@ -202,7 +202,7 @@ int snake() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte snake21[8]={
+	const byte snake21[8]={
 		B00001100,
 		B00000100,
 		B00000100,
@@ -212,7 +212,7 @@ int snake() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte snake22[8]={
+	const byte snake22[8]={
 		B00000100,
 		B00000100,
 		B00000100,
@@ -222,7 +222,7 @@ int snake() {
 		B00000100,
 		B00000000};
 
-	const PROGMEM byte snake23[8]={
+	const byte snake23[8]={
 		B00000000,
 		B00000100,
 		B00000100,
@@ -232,7 +232,7 @@ int snake() {
 		B00001100,
 		B00000000};
 
-	const PROGMEM byte snake24[8]={
+	const byte snake24[8]={
 		B00000000,
 		B00000000,
 		B00000100,
@@ -242,7 +242,7 @@ int snake() {
 		B00011100,
 		B00000000};
 
-	const PROGMEM byte snake25[8]={
+	const byte snake25[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -252,7 +252,7 @@ int snake() {
 		B00011100,
 		B00000000};
 
-	const PROGMEM byte snake26[8]={
+	const byte snake26[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -262,7 +262,7 @@ int snake() {
 		B00011100,
 		B00000000};
 
-	const PROGMEM byte snake27[8]={
+	const byte snake27[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -272,7 +272,7 @@ int snake() {
 		B00011100,
 		B00000000};
 
-	const PROGMEM byte snake28[8]={
+	const byte snake28[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -282,7 +282,7 @@ int snake() {
 		B00011100,
 		B00000000};
 
-	const PROGMEM byte snake29[8]={
+	const byte snake29[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -293,7 +293,7 @@ int snake() {
 		B00000000};
 
 
-	const PROGMEM byte snake30[8]={
+	const byte snake30[8]={
 		B00000000,
 		B00000000,
 		B00000000,

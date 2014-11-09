@@ -3,7 +3,7 @@
 */
 int ghost() {
 
-	const PROGMEM byte ghost1[8]={
+	const byte ghost1[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -13,7 +13,7 @@ int ghost() {
 		B00000000,
 		B00000000};
 
-	const PROGMEM byte ghost2[8]={
+	const byte ghost2[8]={
 		B00000000,
 		B00000000,
 		B10000000,
@@ -23,7 +23,7 @@ int ghost() {
 		B10000000,
 		B10000000};
 
-	const PROGMEM byte ghost3[8]={
+	const byte ghost3[8]={
 		B00000000,
 		B10000000,
 		B11000000,
@@ -33,7 +33,7 @@ int ghost() {
 		B11000000,
 		B01000000};
 
-	const PROGMEM byte ghost4[8]={
+	const byte ghost4[8]={
 		B10000000,
 		B11000000,
 		B01100000,
@@ -43,7 +43,7 @@ int ghost() {
 		B11100000,
 		B00100000};
 
-	const PROGMEM byte ghost5[8]={
+	const byte ghost5[8]={
 		B11000000,
 		B11100000,
 		B10110000,
@@ -53,7 +53,7 @@ int ghost() {
 		B11110000,
 		B01010000};
 
-	const PROGMEM byte ghost6[8]={
+	const byte ghost6[8]={
 		B11100000,
 		B11110000,
 		B01011000,
@@ -63,7 +63,7 @@ int ghost() {
 		B11111000,
 		B10101000};
 
-	const PROGMEM byte ghost7[8]={
+	const byte ghost7[8]={
 		B01110000,
 		B11111000,
 		B10101100,
@@ -73,7 +73,7 @@ int ghost() {
 		B11111100,
 		B01010100};
 
-	const PROGMEM byte ghost8[8]={
+	const byte ghost8[8]={
 		B00111000,
 		B01111100,
 		B11010110,
@@ -83,7 +83,7 @@ int ghost() {
 		B11111110,
 		B10101010};
 
-	const PROGMEM byte ghost9[8]={
+	const byte ghost9[8]={
 		B00011100,
 		B00111110,
 		B01101011,
@@ -93,7 +93,7 @@ int ghost() {
 		B01111111,
 		B01010101};
 
-	const PROGMEM byte ghost9a[8]={
+	const byte ghost9a[8]={
 		B00011100,
 		B00111110,
 		B01101101,
@@ -103,7 +103,7 @@ int ghost() {
 		B01111111,
 		B01010101};
 
-	const PROGMEM byte ghost9b[8]={
+	const byte ghost9b[8]={
 		B00011100,
 		B00111110,
 		B01011011,
@@ -113,7 +113,7 @@ int ghost() {
 		B01111111,
 		B01010101};
 
-	const PROGMEM byte ghost9c[8]={
+	const byte ghost9c[8]={
 		B00011100,
 		B00111110,
 		B01001001,
@@ -123,7 +123,7 @@ int ghost() {
 		B01111111,
 		B01010101};
 
-	const PROGMEM byte ghost9d[8]={
+	const byte ghost9d[8]={
 		B00011100,
 		B00111110,
 		B01001001,
@@ -133,7 +133,7 @@ int ghost() {
 		B01111111,
 		B01010101};
 
-	const PROGMEM byte ghost9e[8]={
+	const byte ghost9e[8]={
 		B00011100,
 		B00111110,
 		B01101101,
@@ -143,7 +143,7 @@ int ghost() {
 		B01111111,
 		B01010101};
 
-	const PROGMEM byte ghost10[8]={
+	const byte ghost10[8]={
 		B00001110,
 		B00011111,
 		B00110101,
@@ -153,7 +153,7 @@ int ghost() {
 		B00111111,
 		B00101010};
 
-	const PROGMEM byte ghost11[8]={
+	const byte ghost11[8]={
 		B00000111,
 		B00001111,
 		B00011010,
@@ -163,7 +163,7 @@ int ghost() {
 		B00011111,
 		B00010101};
 
-	const PROGMEM byte ghost12[8]={
+	const byte ghost12[8]={
 		B00000011,
 		B00000111,
 		B00001101,
@@ -173,7 +173,7 @@ int ghost() {
 		B00001111,
 		B00001010};
 
-	const PROGMEM byte ghost13[8]={
+	const byte ghost13[8]={
 		B00000001,
 		B00000011,
 		B00000110,
@@ -183,7 +183,7 @@ int ghost() {
 		B00000111,
 		B00000101};
 
-	const PROGMEM byte ghost14[8]={
+	const byte ghost14[8]={
 		B00000000,
 		B00000001,
 		B00000011,
@@ -193,7 +193,7 @@ int ghost() {
 		B00000011,
 		B00000010};
 
-	const PROGMEM byte ghost15[8]={
+	const byte ghost15[8]={
 		B00000000,
 		B00000000,
 		B00000001,
@@ -204,7 +204,7 @@ int ghost() {
 		B00000001};
 
 
-	const PROGMEM byte ghost16[8]={
+	const byte ghost16[8]={
 		B00000000,
 		B00000000,
 		B00000000,

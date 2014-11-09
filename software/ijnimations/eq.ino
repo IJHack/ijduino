@@ -2,7 +2,7 @@
 	IJnimation EQ by realitygaps
 */
 int eq() {
-	const PROGMEM byte eq1[8]={
+	const byte eq1[8]={
 		B00000000,
 		B00001100,
 		B11001100,
@@ -12,7 +12,7 @@ int eq() {
 		B11111111,
 		B11111111};
 
-	const PROGMEM byte eq2[8]={
+	const byte eq2[8]={
 		B00000000,
 		B00001100,
 		B11001100,
@@ -22,7 +22,7 @@ int eq() {
 		B11111111,
 		B11111111};
 
-	const PROGMEM byte eq3[8]={
+	const byte eq3[8]={
 		B00000000,
 		B00001100,
 		B11001100,
@@ -32,7 +32,7 @@ int eq() {
 		B11111111,
 		B11111111};
 
-	const PROGMEM byte eq4[8]={
+	const byte eq4[8]={
 		B00000000,
 		B00000000,
 		B00001100,
@@ -42,7 +42,7 @@ int eq() {
 		B11111111,
 		B11111111};
 
-	const PROGMEM byte eq5[8]={
+	const byte eq5[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -52,7 +52,7 @@ int eq() {
 		B11111111,
 		B11111111};
 
-	const PROGMEM byte eq6[8]={
+	const byte eq6[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -62,7 +62,7 @@ int eq() {
 		B11001111,
 		B11111111};
 
-	const PROGMEM byte eq7[8]={
+	const byte eq7[8]={
 		B00000000,
 		B00000000,
 		B00000011,
@@ -72,7 +72,7 @@ int eq() {
 		B11001111,
 		B11001111};
 
-	const PROGMEM byte eq8[8]={
+	const byte eq8[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -82,7 +82,7 @@ int eq() {
 		B00001111,
 		B11111111};
 
-	const PROGMEM byte eq9[8]={
+	const byte eq9[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -92,7 +92,7 @@ int eq() {
 		B00111111,
 		B11111111};
 
-	const PROGMEM byte eq10[8]={
+	const byte eq10[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -102,7 +102,7 @@ int eq() {
 		B00111111,
 		B11111111};
 
-	const PROGMEM byte eq11[8]={
+	const byte eq11[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -112,7 +112,7 @@ int eq() {
 		B11001111,
 		B11111111};
 
-	const PROGMEM byte eq12[8]={
+	const byte eq12[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -122,7 +122,7 @@ int eq() {
 		B11111111,
 		B11111111};
 
-	const PROGMEM byte eq13[8]={
+	const byte eq13[8]={
 		B00000000,
 		B00000000,
 		B00000000,
@@ -132,7 +132,7 @@ int eq() {
 		B11111111,
 		B11111111};
 
-	const PROGMEM byte eq14[8]={
+	const byte eq14[8]={
 		B00000000,
 		B00000000,
 		B00001100,
@@ -142,7 +142,7 @@ int eq() {
 		B11111111,
 		B11111111};
 
-	const PROGMEM byte eq15[8]={
+	const byte eq15[8]={
 		B00000000,
 		B00001100,
 		B11001100,
