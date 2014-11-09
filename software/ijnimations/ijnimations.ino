@@ -11,7 +11,7 @@ http://ijhack.org/
  */
 #include "LedControl.h"
 
-/* using VCC, GND, DIN 21, CS 21, CLK 5 for the MAX7219 */
+/* using VCC, GND, DIN 20, CS 21, CLK 5 for the MAX7219 */
 LedControl lc=LedControl(20,5,21,1);
 
 int lowPin = 11;             /* ground pin for the buton ;-) */
