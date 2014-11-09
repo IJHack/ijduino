@@ -144,7 +144,7 @@ byte I[8] = {
 
 
 int ledPin = 13; 
-int speakerPin = 7;
+int speakerPin = 8;
 
 #define N_c 261
 #define N_d 294
