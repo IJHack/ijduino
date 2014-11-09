@@ -48,7 +48,7 @@ void setup() {
 // http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1193587488
 // Since 0012, PGM_P is broken. Fortunately there's a workaround 
 
-char message_00[] PROGMEM = "Serial IJhack v1.1 ";
+char message_00[] PROGMEM = "Test IJhack v1.1 ";
 char message_01[] PROGMEM = "test ";
 char message_02[] PROGMEM = "lol";
 
@@ -163,7 +163,7 @@ void loop() {
     
       sensors.requestTemperatures(); // Send the command to get temperatures
 
-      sprintf(message_00, "Temp: %dC", sensors.getTempCByIndex(0));
+   //   sprintf(message_00, "Temp: %dC", sensors.getTempCByIndex(0));
 
     //6
     for (i = 0; i < MAX_MESSAGES; i++) {
