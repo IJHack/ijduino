@@ -1,7 +1,7 @@
 /*
 	IJnimation waterdrip by Einstein
 */
-void waterdrip() {
+int waterdrip() {
 	byte drip1[8] = {
 		B00000000,
 		B00000000,
