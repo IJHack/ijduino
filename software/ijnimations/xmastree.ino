@@ -1,20 +1,21 @@
 /*
 	xmastree by Einstein
-*/int xmastree() {
-  byte animation1[8] = {
+*/
+int xmastree() {
+  const byte animation1[8] = {
 B10011000,B00111100,B01111110,B11111111,B00111100,B01111110,B11111111,B00011000
 };
 
-  byte animation2[8] = {
+  const byte animation2[8] = {
 B00011001,B00111100,B01111110,B11111111,B00111100,B01111110,B11111111,B00011000
   };
 
-  byte animation3[8] = {
+  const byte animation3[8] = {
 B01011000,B00111100,B01111110,B11111111,B00111100,B01111110,B11111111,B00011000
   };
 
 
-  byte animation4[8] = {
+  const byte animation4[8] = {
 B00011010,B00111100,B01111110,B11111111,B00111100,B01111110,B11111111,B00011000
   };
 

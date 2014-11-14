@@ -2,31 +2,31 @@
 	battery animation by Einstein
 */
 int battery() {
-  byte animation1[8] = {
+  const byte animation1[8] = {
     B00111100, B01000010, B01000010, B01000010, B01000010, B01000010, B01000010, B01111110
   };
 
-  byte animation2[8] = {
+  const byte animation2[8] = {
     B00111100, B01000010, B01000010, B01000010, B01000010, B01000010, B01111110, B01111110
   };
 
-  byte animation3[8] = {
+  const byte animation3[8] = {
     B00111100, B01000010, B01000010, B01000010, B01000010, B01111110, B01111110, B01111110
   };
 
-  byte animation4[8] = {
+  const byte animation4[8] = {
     B00111100, B01000010, B01000010, B01000010, B01111110, B01111110, B01111110, B01111110
   };
 
-  byte animation5[8] = {
+  const byte animation5[8] = {
     B00111100, B01000010, B01000010, B01111110, B01111110, B01111110, B01111110, B01111110
   };
 
-  byte animation6[8] = {
+  const byte animation6[8] = {
     B00111100, B01000010, B01111110, B01111110, B01111110, B01111110, B01111110, B01111110
   };
 
-  byte animation7[8] = {
+  const byte animation7[8] = {
     B00111100, B01111110, B01111110, B01111110, B01111110, B01111110, B01111110, B01111110
   };
 
