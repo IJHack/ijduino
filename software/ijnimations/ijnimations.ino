@@ -17,11 +17,12 @@ LedControl lc=LedControl(20,5,21,1);
 int lowPin = 11;             /* ground pin for the buton ;-) */
 int buttonPin = 9;           /* choose the input pin for the pushbutton */
 
-const int animations = 21;
+const int animations = 23;
 int (*ijnimations[animations])() = {
 	ijhacklogo, ghost, invader, heart, invadesquid, jumper, ijlogowink, 
 	heartbeat, eq, invaderagain, pong, snake, arrows, directions,
-	packman, diagonals, waterdrip, aliens, blockanim, pulse, tewdoodles
+	packman, diagonals, waterdrip, aliens, blockanim, pulse, tewdoodles,
+	battery,xmastree
 };
 
 int lastButtonState = LOW;   /* the previous reading from the input pin */
