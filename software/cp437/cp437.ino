@@ -24,6 +24,7 @@ void setup() {
 void letter (const byte c)
 {
   for (byte col = 0; col < 8; col++) {
+    // ijduino is 90 degrees turned compared to 'normal' operation
     lc.setRow(0, col, pgm_read_byte (&cp437_font [c] [col]));
   }
 }  // end of letter
