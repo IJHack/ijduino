@@ -35,6 +35,19 @@ void letter (const byte c)
   }
 }  // end of letter
 
+char *ftoa(char *a, double f, int precision)
+{
+ long p[] = {0,10,100,1000,10000,100000,1000000,10000000,100000000};
+ 
+ char *ret = a;
+ long heiltal = (long)f;
+ itoa(heiltal, a, 10);
+ while (*a != '\0') a++;
+ *a++ = '.';
+ long desimal = abs((long)((f - heiltal) * p[precision]));
+ itoa(desimal, a, 10);
+ return ret;
+}
 
 void showString (const char * s, const unsigned long time)
 {
@@ -46,18 +59,21 @@ void showString (const char * s, const unsigned long time)
   }
 }  // end of showString
 
+int count = 0;
 void loop(void) {
   byte i;
   byte present = 0;
   byte type_s;
   byte data[12];
   byte addr[8];
-  float celsius, fahrenheit;
 
   if ( !ds.search(addr)) {
-    showString("No thermometer found. ", 200);
+    if (count == 0) {
+      showString("No thermometer found. ", 200);
+    }
     ds.reset_search();
     delay(250);
+    count = 0;
     return;
   }
 
@@ -96,10 +112,13 @@ void loop(void) {
     else if (cfg == 0x40) raw = raw & ~1; // 11 bit res, 375 ms
     //// default is 12 bit resolution, 750 ms conversion time
   }
-  celsius = (float)raw / 16.0;
-
+  
+  float temp = (float)raw / 16.0;
+  int itemp = int(temp);
+  
   char meuk[75];
-  sprintf(meuk, "Temperature %d Celcius ", celsius);
+  count ++;
+  sprintf(meuk, "Zone %d %d.%d\xF8""C ", count, itemp, int((temp-itemp)*100));
   showString(meuk, 500);
 }
 

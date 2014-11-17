@@ -1,296 +1,149 @@
-/**
-*  Play pong on an 8x8 matrix
-*
-*    0 1 2 3 4 5 6 7
-*  0
-*  1
-*  2      7 0 1
-*  3      6 X 2 (directions)
-*  4      5 4 3
-*  5
-*  6
-*  7    [pad]         
-*
-*
-*  Based on code from http://www.itopen.it/2012/03/09/arduino-pong-with-8x8-led-matrix-and-max7219/
-*
-*/
- 
- 
+#include "Pong.h"
+
+// LedControl library:
+//
+// http://playground.arduino.cc/Main/LedControl
+// http://www.wayoda.org/arduino/ledcontrol/index.html
+
 #include "LedControl.h"
-#include "Timer.h"
- 
- 
-#define POTPIN A5 // Potentiometer
-#define PADSIZE 3
-#define BALL_DELAY 200
-#define GAME_DELAY 10
-#define BOUNCE_VERTICAL 1
-#define BOUNCE_HORIZONTAL -1
-#define NEW_GAME_ANIMATION_SPEED 50
-#define HIT_NONE 0
-#define HIT_CENTER 1
-#define HIT_LEFT 2
-#define HIT_RIGHT 3
- 
- 
-//#define DEBUG 1
- 
-byte sad[] = {
-B00000000,
-B01000100,
-B00010000,
-B00010000,
-B00000000,
-B00111000,
-B01000100,
-B00000000
+
+static const int DATA_PIN = 20;
+static const int CLK_PIN  = 5;
+static const int CS_PIN   = 21;
+
+static const int PADDLE0_PIN = 5;
+static const int PADDLE1_PIN = 4;
+
+static char pongchars[][8] = {
+    { 0b00000000, 0b01111100, 0b01000010, 0b01000010,   
+      0b01111100, 0b01000000, 0b01000000, 0b00000000, }, // P
+    { 0b00000000, 0b00111100, 0b01000010, 0b01000010,   
+      0b01000010, 0b01000010, 0b00111100, 0b00000000, }, // O
+    { 0b00000000, 0b01000010, 0b01100010, 0b01010010,   
+      0b01001010, 0b01000110, 0b01000010, 0b00000000, }, // N
+    { 0b00000000, 0b00111100, 0b01000000, 0b01000000,   
+      0b01111100, 0b01000010, 0b00111100, 0b00000000, }, // G
 };
- 
-byte smile[] = {
-B00000000,
-B01000100,
-B00010000,
-B00010000,
-B00010000,
-B01000100,
-B00111000,
-B00000000
+
+static char digit[][5] = {
+    { 0b111, 0b101, 0b101, 0b101, 0b111 },
+    { 0b001, 0b001, 0b001, 0b001, 0b001 },
+    { 0b111, 0b001, 0b111, 0b100, 0b111 },
+    { 0b111, 0b001, 0b111, 0b001, 0b111 },
+    { 0b101, 0b101, 0b111, 0b001, 0b001 },
+    { 0b111, 0b100, 0b111, 0b001, 0b111 },
+    { 0b111, 0b100, 0b111, 0b101, 0b111 },
+    { 0b111, 0b001, 0b001, 0b001, 0b001 },
+    { 0b111, 0b101, 0b111, 0b101, 0b111 },
+    { 0b111, 0b101, 0b111, 0b001, 0b111 },
 };
- 
- 
-Timer timer;
- 
-LedControl lc = LedControl(20,5,21,1);
- 
-byte direction; // Wind rose, 0 is north
-int xball;
-int yball;
-int yball_prev;
-byte xpad;
-int ball_timer;
- 
-void setSprite(byte *sprite){
-    for(int r = 0; r < 8; r++){
-        lc.setColumn(0, 7-r, sprite[r]);
+
+class LedMatrixPong : public Pong
+{
+public:
+    LedMatrixPong(LedControl& ledControl, int paddle0_pin, int paddle1_pin) :
+	ledControl_(ledControl),
+	Pong(ROWS, COLS, paddle0_pin, paddle1_pin) {}
+
+    void showPaddle(Paddle& p) { setPaddle(p, true); }
+    void hidePaddle(Paddle& p) { setPaddle(p, false); }
+
+    void showBall(Ball& b) { ledControl_.setLed(0, b.col(), b.row(), true); }
+    void hideBall(Ball& b) { ledControl_.setLed(0, b.col(), b.row(), false); }
+
+    void startGame();
+    void showScore();
+
+private:
+    static const int ROWS = 8;
+    static const int COLS = 8;
+
+    void sayPong(int delay_ms);
+    void setPaddle(const Paddle& p, bool state);
+
+    LedControl& ledControl_;
+};
+
+void LedMatrixPong::startGame()
+{
+    ledControl_.clearDisplay(0);
+    sayPong(500);
+
+    for (int row = MAX_ROW; row >= 0; row--) {
+	ledControl_.setColumn(0, row, 0xff);
+	delay(100);
+	ledControl_.setColumn(0, row, 0);
+    }
+
+    start();
+}
+
+void LedMatrixPong::sayPong(int delay_ms)
+{
+    for (int c = 0; c < 4; c++) {
+	for (int r = 0; r <= MAX_ROW; r++) {
+	    ledControl_.setColumn(0, 7-r, pongchars[c][r]);
+	}
+	delay(delay_ms);
     }
 }
- 
-void newGame() {
-    lc.clearDisplay(0);
-    // initial position
-    xball = random(1, 7);
-    yball = 1;
-    direction = random(3, 6); // Go south
-    for(int r = 0; r < 8; r++){
-        for(int c = 0; c < 8; c++){
-            lc.setLed(0, r, c, HIGH);
-            delay(NEW_GAME_ANIMATION_SPEED);
-        }
+
+void LedMatrixPong::showScore()
+{
+    for (int step = 0; step < 10; step++) {
+	ledControl_.clearDisplay(0);
+	ledControl_.setLed(0, 3, 4, true);
+	ledControl_.setLed(0, 4, 4, true);
+
+	int i = (step < 8) ? step : 14 - step;
+	int j = 4;
+	while (i >= 0 && j >= 0) {
+	    for (int k = 0; k < 3; k++) {
+		ledControl_.setLed(0, 2-k, 7-i, digit[score_[0]][j] & (1<<k));
+	    }
+	    i--; j--;
+	}
+
+	i = (step < 9) ? 8 - step : step - 8;
+	j = 0;
+	while (i <= 7 && j <= 4) {
+	    for (int k = 0; k < 3; k++) {
+		ledControl_.setLed(0, 7-k, 7-i, digit[score_[1]][j] & (1<<k));
+	    }
+	    i++; j++;
+	}
+	
+	delay(50 + 10 * step);
     }
-    setSprite(smile);
+
     delay(1500);
-    lc.clearDisplay(0);
+    ledControl_.clearDisplay(0);
 }
- 
-void setPad() {
-    xpad = map(analogRead(POTPIN), 0, 1020, 8 - PADSIZE, 0);
+
+void LedMatrixPong::setPaddle(const Paddle& p, bool state)
+{
+    ledControl_.setLed(0, p.col(), p.row(), state);
+    ledControl_.setLed(0, p.col(), p.row() + 1, state);
 }
- 
-void debug(const char* desc){
-#ifdef DEBUG
-    Serial.print(desc);
-    Serial.print(" XY: ");
-    Serial.print(xball);
-    Serial.print(", ");
-    Serial.print(yball);
-    Serial.print(" XPAD: ");
-    Serial.print(xpad);
-    Serial.print(" DIR: ");
-    Serial.println(direction);
-#endif
+
+LedControl ledControl(DATA_PIN, CLK_PIN, CS_PIN, 1);
+LedMatrixPong pong(ledControl, PADDLE0_PIN, PADDLE1_PIN);
+
+void setup()
+{
+    ledControl.shutdown(0, false);
+    ledControl.setIntensity(0, 15);
+    ledControl.clearDisplay(0);
+    randomSeed(analogRead(PADDLE0_PIN));
+
+    pong.startGame();
 }
- 
-int checkBounce() {
-    if(!xball || !yball || xball == 7 || yball == 6){
-        int bounce = (yball == 0 || yball == 6) ? BOUNCE_HORIZONTAL : BOUNCE_VERTICAL;
-#ifdef DEBUG
-        debug(bounce == BOUNCE_HORIZONTAL ? "HORIZONTAL" : "VERTICAL");
-#endif
-        return bounce;
-    }
-    return 0;
+
+void loop()
+{
+    pong.update();
 }
- 
-int getHit() {
-    if(yball != 6 || xball < xpad || xball > xpad + PADSIZE){
-        return HIT_NONE;
-    }
-    if(xball == xpad + PADSIZE / 2){
-        return HIT_CENTER;
-    }
-    return xball < xpad + PADSIZE / 2 ? HIT_LEFT : HIT_RIGHT;
-}
- 
-bool checkLoose() {
-    return yball == 6 && getHit() == HIT_NONE;
-}
- 
-void moveBall() {
-    debug("MOVE");
-    int bounce = checkBounce();
-    if(bounce) {
-        switch(direction){
-            case 0:
-                direction = 4;
-            break;
-            case 1:
-                direction = (bounce == BOUNCE_VERTICAL) ? 7 : 3;
-            break;
-            case 2:
-                direction = 6;
-            break;
-            case 6:
-                direction = 2;
-            break;
-            case 7:
-                direction = (bounce == BOUNCE_VERTICAL) ? 1 : 5;
-            break;
-            case 5:
-                direction = (bounce == BOUNCE_VERTICAL) ? 3 : 7;
-            break;
-            case 3:
-                direction = (bounce == BOUNCE_VERTICAL) ? 5 : 1;
-            break;
-            case 4:
-                direction = 0;
-            break;
-        }
-        debug("->");
-    }
- 
-    // Check hit: modify direction is left or right
-    switch(getHit()){
-        case HIT_LEFT:
-            if(direction == 0){
-                direction =  7;
-            } else if (direction == 1){
-                direction = 0;
-            }
-        break;
-        case HIT_RIGHT:
-            if(direction == 0){
-                direction = 1;
-            } else if(direction == 7){
-                direction = 0;
-            }
-        break;
-    }
- 
-    // Check orthogonal directions and borders ...
-    if((direction == 0 && xball == 0) || (direction == 4 && xball == 7)){
-        direction++;
-    }
-    if(direction == 0 && xball == 7){
-        direction = 7;
-    }
-    if(direction == 4 && xball == 0){
-        direction = 3;
-    }
-    if(direction == 2 && yball == 0){
-        direction = 3;
-    }
-    if(direction == 2 && yball == 6){
-        direction = 1;
-    }
-    if(direction == 6 && yball == 0){
-        direction = 5;
-    }
-    if(direction == 6 && yball == 6){
-        direction = 7;
-    }
-    
-    // "Corner" case
-    if(xball == 0 && yball == 0){
-        direction = 3;
-    }
-    if(xball == 0 && yball == 6){
-        direction = 1;
-    }
-    if(xball == 7 && yball == 6){
-        direction = 7;
-    }
-    if(xball == 7 && yball == 0){
-        direction = 5;
-    }
- 
-    yball_prev = yball;
-    if(2 < direction && direction < 6) {
-        yball++;
-    } else if(direction != 6 && direction != 2) {
-        yball--;
-    }
-    if(0 < direction && direction < 4) {
-        xball++;
-    } else if(direction != 0 && direction != 4) {
-        xball--;
-    }
-    xball = max(0, min(7, xball));
-    yball = max(0, min(6, yball));
-    debug("AFTER MOVE");
-}
- 
-void gameOver() {
-    setSprite(sad);
-    delay(1500);
-    lc.clearDisplay(0);
-}
- 
-void drawGame() {
-    if(yball_prev != yball){
-        lc.setColumn(0, 7-yball_prev, 0);
-    }
-    lc.setColumn(0, 7-yball, byte(1 << (xball)));
-    byte padmap = byte(0xFF >> (8 - PADSIZE) << xpad) ;
-#ifdef DEBUG
-    //Serial.println(padmap, BIN);
-#endif
-    lc.setColumn(0, 0, padmap);
-}
- 
-void setup() {
-  // The MAX72XX is in power-saving mode on startup,
-  // we have to do a wakeup call
-  pinMode(POTPIN, INPUT);
- 
-  lc.shutdown(0,false);
-  // Set the brightness to a medium values
-  lc.setIntensity(0, 8);
-  // and clear the display
-  lc.clearDisplay(0);
-  randomSeed(analogRead(0));
-#ifdef DEBUG
-  Serial.begin(9600);
-  Serial.println("Pong");
-#endif
-  newGame();
-  ball_timer = timer.every(BALL_DELAY, moveBall);
-}
- 
- 
-void loop() {
-    timer.update();
-    // Move pad
-    setPad();
-#ifdef DEBUG
-    Serial.println(xpad);
-#endif
-    // Update screen
-    drawGame();
-    if(checkLoose()) {
-        debug("LOOSE");
-        gameOver();
-        newGame();
-    }
-    delay(GAME_DELAY);
-}
+
+// Local variables:
+// mode: c++
+// End:

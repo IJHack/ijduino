@@ -4,12 +4,6 @@
 
 
 
-// pin 12 is connected to the MAX7219 pin 1
-
-// pin 11 is connected to the CLK pin 13
-
-// pin 10 is connected to LOAD pin 12
-
 static const int DATA_PIN = 20;
 static const int CLK_PIN  = 5;
 static const int CS_PIN   = 21;
