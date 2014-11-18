@@ -3,6 +3,8 @@
 #include "penlight.h"
 #include "lipo.h"
 
+static const float Vin = 4.5;
+
 /* using VCC, GND, DIN 20, CS 21, CLK 5 for the MAX7219 */
 static const int DATA_PIN = 20;
 static const int CLK_PIN  = 5;
@@ -21,7 +23,8 @@ void setup() {
 void loop() {
   float batteryV;
   for (;;)  { 
-    batteryV = analogRead(A0)/229.6; 
+    batteryV = analogRead(A0) / (51.0 * Vin);
+    
     if (batteryV <= 1) {
       render(penlight1,20);
     } 
