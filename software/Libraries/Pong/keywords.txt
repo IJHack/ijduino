@@ -1,0 +1,3 @@
+Ball	KEYWORD1
+Paddle	KEYWORD1
+Pong	KEYWORD1

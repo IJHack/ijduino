@@ -1,4 +1,4 @@
-/*                            IJduino 1.0
+/*                            IJduino 1.1
 Requires:
  * 8X8 LED grid MAX7219
  * Mini Breadboard
@@ -12,16 +12,21 @@ http://ijhack.org/
 #include "LedControl.h"
 
 /* using VCC, GND, DIN 20, CS 21, CLK 5 for the MAX7219 */
-LedControl lc=LedControl(20,5,21,1);
+static const int DATA_PIN = 20;
+static const int CLK_PIN  = 5;
+static const int CS_PIN   = 21;
 
-int lowPin = 11;             /* ground pin for the buton ;-) */
-int buttonPin = 9;           /* choose the input pin for the pushbutton */
+LedControl lc=LedControl(DATA_PIN, CLK_PIN, CS_PIN, 1);
 
-const int animations = 21;
+static const int lowPin = 11;             /* ground pin for the buton ;-) */
+static const int buttonPin = 9;           /* choose the input pin for the pushbutton */
+
+static const int animations = 23;
 int (*ijnimations[animations])() = {
 	ijhacklogo, ghost, invader, heart, invadesquid, jumper, ijlogowink, 
 	heartbeat, eq, invaderagain, pong, snake, arrows, directions,
-	packman, diagonals, waterdrip, aliens, blockanim, pulse, tewdoodles
+	packman, diagonals, waterdrip, aliens, blockanim, pulse, tewdoodles,
+	battery, xmastree
 };
 
 int lastButtonState = LOW;   /* the previous reading from the input pin */

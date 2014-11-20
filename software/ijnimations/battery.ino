@@ -2,7 +2,8 @@
 	battery animation by Einstein
 */
 
-const byte animation1[8] = {
+int battery() {
+  const byte animation1[8] = {
     B00111100, B01000010, B01000010, B01000010, B01000010, B01000010, B01000010, B01111110
   };
 
@@ -30,8 +31,6 @@ const byte animation1[8] = {
     B00111100, B01111110, B01111110, B01111110, B01111110, B01111110, B01111110, B01111110
   };
 
-
-int battery() {
   bool skip = render(animation1, 500);
   if (skip) {
     return true;
