@@ -19,7 +19,7 @@ static const int DATA_PIN = 20;
 static const int CLK_PIN  = 5;
 static const int CS_PIN   = 21;
 
-//static const int INTENSITY = 5;
+static const int INTENSITY = 5;
 static const int DISPLAYS = 1;
 
 /* choose the input pin for the pushbutton */
@@ -37,6 +37,7 @@ int lastButtonState = LOW;   /* the previous reading from the input pin */
 unsigned long lastDebounceTime = 0;   /* the last time the output pin was toggled */
 unsigned long debounceDelay = 50;     /* the debounce time; increase if the output flickers */
 int animation = 0;
+int animations = 0;
 int buttonState = LOW;
 
 void setup() {
@@ -56,15 +57,23 @@ void setup() {
 void loop() {
 	bool skip;
 
+        
         load(ij);
 
-        
-        render(screen, 100, 0);
+        render(screen, 0);
+                
+        readinput(1000);        
                 
         load(a);
         
-        render(screen, 100, 0);
+        render(screen, 0);
+        
+        readinput(1000);
                 
+}
+
+void moveleft() {
+  
 }
 
 void load(const byte* frame) {
