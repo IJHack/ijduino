@@ -111,162 +111,161 @@
 #define S Q/4 // sixteenth 1/16
 #define W 4*Q // whole 4/4
 
-void setup() {     
-pinMode(8, OUTPUT);   
-pinMode(9, OUTPUT);       
-digitalWrite(9,LOW);
+int outpin = 8;  
 
+void setup() {  
+pinMode(outpin, OUTPUT);   
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
   //tone(pin, note, duration)
-    tone(8,LA3,Q); 
+    tone(outpin,LA3,Q); 
     delay(1+Q); //delay duration should always be 1 ms more than the note in order to separate them.
-    tone(8,LA3,Q);
+    tone(outpin,LA3,Q);
     delay(1+Q);
-    tone(8,LA3,Q);
+    tone(outpin,LA3,Q);
     delay(1+Q);
-    tone(8,F3,E+S);
+    tone(outpin,F3,E+S);
     delay(1+E+S);
-    tone(8,C4,S);
+    tone(outpin,C4,S);
     delay(1+S);
     
-    tone(8,LA3,Q);
+    tone(outpin,LA3,Q);
     delay(1+Q);
-    tone(8,F3,E+S);
+    tone(outpin,F3,E+S);
     delay(1+E+S);
-    tone(8,C4,S);
+    tone(outpin,C4,S);
     delay(1+S);
-    tone(8,LA3,H);
+    tone(outpin,LA3,H);
     delay(1+H);
     
-    tone(8,E4,Q); 
+    tone(outpin,E4,Q); 
     delay(1+Q); 
-    tone(8,E4,Q);
+    tone(outpin,E4,Q);
     delay(1+Q);
-    tone(8,E4,Q);
+    tone(outpin,E4,Q);
     delay(1+Q);
-    tone(8,F4,E+S);
+    tone(outpin,F4,E+S);
     delay(1+E+S);
-    tone(8,C4,S);
+    tone(outpin,C4,S);
     delay(1+S);
     
-    tone(8,Ab3,Q);
+    tone(outpin,Ab3,Q);
     delay(1+Q);
-    tone(8,F3,E+S);
+    tone(outpin,F3,E+S);
     delay(1+E+S);
-    tone(8,C4,S);
+    tone(outpin,C4,S);
     delay(1+S);
-    tone(8,LA3,H);
+    tone(outpin,LA3,H);
     delay(1+H);
     
-    tone(8,LA4,Q);
+    tone(outpin,LA4,Q);
     delay(1+Q);
-    tone(8,LA3,E+S);
+    tone(outpin,LA3,E+S);
     delay(1+E+S);
-    tone(8,LA3,S);
+    tone(outpin,LA3,S);
     delay(1+S);
-    tone(8,LA4,Q);
+    tone(outpin,LA4,Q);
     delay(1+Q);
-    tone(8,Ab4,E+S);
+    tone(outpin,Ab4,E+S);
     delay(1+E+S);
-    tone(8,G4,S);
+    tone(outpin,G4,S);
     delay(1+S);
     
-    tone(8,Gb4,S);
+    tone(outpin,Gb4,S);
     delay(1+S);
-    tone(8,E4,S);
+    tone(outpin,E4,S);
     delay(1+S);
-    tone(8,F4,E);
+    tone(outpin,F4,E);
     delay(1+E);
     delay(1+E);//PAUSE
-    tone(8,Bb3,E);
+    tone(outpin,Bb3,E);
     delay(1+E);
-    tone(8,Eb4,Q);
+    tone(outpin,Eb4,Q);
     delay(1+Q);
-    tone(8,D4,E+S);
+    tone(outpin,D4,E+S);
     delay(1+E+S);
-    tone(8,Db4,S);
+    tone(outpin,Db4,S);
     delay(1+S);
     
-    tone(8,C4,S);
+    tone(outpin,C4,S);
     delay(1+S);
-    tone(8,B3,S);
+    tone(outpin,B3,S);
     delay(1+S);
-    tone(8,C4,E);
+    tone(outpin,C4,E);
     delay(1+E);
     delay(1+E);//PAUSE QUASI FINE RIGA
-    tone(8,F3,E);
+    tone(outpin,F3,E);
     delay(1+E);
-    tone(8,Ab3,Q);
+    tone(outpin,Ab3,Q);
     delay(1+Q);
-    tone(8,F3,E+S);
+    tone(outpin,F3,E+S);
     delay(1+E+S);
-    tone(8,LA3,S);
+    tone(outpin,LA3,S);
     delay(1+S);
     
-    tone(8,C4,Q);
+    tone(outpin,C4,Q);
     delay(1+Q);
-     tone(8,LA3,E+S);
+     tone(outpin,LA3,E+S);
     delay(1+E+S);
-    tone(8,C4,S);
+    tone(outpin,C4,S);
     delay(1+S);
-    tone(8,E4,H);
+    tone(outpin,E4,H);
     delay(1+H);
     
-     tone(8,LA4,Q);
+     tone(outpin,LA4,Q);
     delay(1+Q);
-    tone(8,LA3,E+S);
+    tone(outpin,LA3,E+S);
     delay(1+E+S);
-    tone(8,LA3,S);
+    tone(outpin,LA3,S);
     delay(1+S);
-    tone(8,LA4,Q);
+    tone(outpin,LA4,Q);
     delay(1+Q);
-    tone(8,Ab4,E+S);
+    tone(outpin,Ab4,E+S);
     delay(1+E+S);
-    tone(8,G4,S);
+    tone(outpin,G4,S);
     delay(1+S);
     
-    tone(8,Gb4,S);
+    tone(outpin,Gb4,S);
     delay(1+S);
-    tone(8,E4,S);
+    tone(outpin,E4,S);
     delay(1+S);
-    tone(8,F4,E);
+    tone(outpin,F4,E);
     delay(1+E);
     delay(1+E);//PAUSE
-    tone(8,Bb3,E);
+    tone(outpin,Bb3,E);
     delay(1+E);
-    tone(8,Eb4,Q);
+    tone(outpin,Eb4,Q);
     delay(1+Q);
-    tone(8,D4,E+S);
+    tone(outpin,D4,E+S);
     delay(1+E+S);
-    tone(8,Db4,S);
+    tone(outpin,Db4,S);
     delay(1+S);
     
-    tone(8,C4,S);
+    tone(outpin,C4,S);
     delay(1+S);
-    tone(8,B3,S);
+    tone(outpin,B3,S);
     delay(1+S);
-    tone(8,C4,E);
+    tone(outpin,C4,E);
     delay(1+E);
     delay(1+E);//PAUSE QUASI FINE RIGA
-    tone(8,F3,E);
+    tone(outpin,F3,E);
     delay(1+E);
-    tone(8,Ab3,Q);
+    tone(outpin,Ab3,Q);
     delay(1+Q);
-    tone(8,F3,E+S);
+    tone(outpin,F3,E+S);
     delay(1+E+S);
-    tone(8,C4,S);
+    tone(outpin,C4,S);
     delay(1+S);
     
-    tone(8,LA3,Q);
+    tone(outpin,LA3,Q);
     delay(1+Q);
-     tone(8,F3,E+S);
+     tone(outpin,F3,E+S);
     delay(1+E+S);
-    tone(8,C4,S);
+    tone(outpin,C4,S);
     delay(1+S);
-    tone(8,LA3,H);
+    tone(outpin,LA3,H);
     delay(1+H);
     
     delay(2*H);

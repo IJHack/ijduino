@@ -1,8 +1,8 @@
 #include "LedControl.h" //  need the library
 #include <OneWire.h>
 #include "PropFont.h"
-// Data wire is plugged into port 2 on the Arduino
-#define ONE_WIRE_BUS 2
+// Data wire is plugged into port 10 on the Arduino
+#define ONE_WIRE_BUS 10
 
 static const int DATA_PIN = 20;
 static const int CLK_PIN  = 5;
