@@ -67,55 +67,49 @@ void loop() {
 	}
 }
 
-int render(const byte* frame, long delaytime) {
-	lc.setColumn(0,0,frame[7]);
-	lc.setColumn(0,1,frame[6]);
-	lc.setColumn(0,2,frame[5]);
-	lc.setColumn(0,3,frame[4]);
-	lc.setColumn(0,4,frame[3]);
-	lc.setColumn(0,5,frame[2]);
-	lc.setColumn(0,6,frame[1]);
-	lc.setColumn(0,7,frame[0]);
+int render(const byte* frame, 100, long delayTime) {
+  for (int i = 0; i < 8; i++) {
+    lc.setColumn(0,i, frame[7-i]);
+  }
+  
+  unsigned long startTime = millis();
+  while ((startTime + delaytime) > millis()){
+    // read the state of the switch into a local variable:
+    int reading = digitalRead(buttonPin);
 
-	unsigned long startTime = millis();
-	while ((startTime + delaytime) > millis()){
+    // check to see if you just pressed the button 
+    // (i.e. the input went from HIGH to LOW),  and you've waited 
+    // long enough since the last press to ignore any noise:  
 
-		// read the state of the switch into a local variable:
-		int reading = digitalRead(buttonPin);
+    // If the switch changed, due to noise or pressing:
+    if (reading != lastButtonState) {
+      // reset the debouncing timer
+      lastDebounceTime = millis();
+    } 
 
-		// check to see if you just pressed the button 
-		// (i.e. the input went from HIGH to LOW),  and you've waited 
-		// long enough since the last press to ignore any noise:  
+    if ((millis() - lastDebounceTime) > debounceDelay) {
+      // whatever the reading is at, it's been there for longer
+      // than the debounce delay, so take it as the actual current state:
 
-		// If the switch changed, due to noise or pressing:
-		if (reading != lastButtonState) {
-			// reset the debouncing timer
-			lastDebounceTime = millis();
-		} 
+      // if the button state has changed:
+      if (reading != buttonState) {
+        buttonState = reading;
 
-		if ((millis() - lastDebounceTime) > debounceDelay) {
-			// whatever the reading is at, it's been there for longer
-			// than the debounce delay, so take it as the actual current state:
+        // only toggle the animation if the new button state is HIGH
+        if (buttonState == LOW) {
+          animation++;
+          if (animation > animations) {
+            animation = 0;
+          }
+          return true;
+        }
+      }
+    }
 
-			// if the button state has changed:
-			if (reading != buttonState) {
-				buttonState = reading;
-
-				// only toggle the animation if the new button state is HIGH
-				if (buttonState == LOW) {
-					animation++;
-					if (animation > animations) {
-						animation = 0;
-					}
-					return true;
-				}
-			}
-		}
-
-		// save the reading.  Next time through the loop,
-		// it'll be the lastButtonState:
-		lastButtonState = reading;
-	}
-	return false;  /* don't skip the rest */
-} 
+    // save the reading.  Next time through the loop,
+    // it'll be the lastButtonState:
+    lastButtonState = reading;
+  }
+  return false;  /* don't skip the rest */
+}
 
