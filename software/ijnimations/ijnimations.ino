@@ -1,4 +1,4 @@
-/*                            IJduino 1.1
+/*                            IJduino 1.5
 Requires:
  * 8X8 LED grid MAX7219
  * Mini Breadboard
@@ -21,6 +21,8 @@ LedControl lc=LedControl(DATA_PIN, CLK_PIN, CS_PIN, 1);
 static const int lowPin = 11;             /* ground pin for the buton ;-) */
 static const int buttonPin = 9;           /* choose the input pin for the pushbutton */
 
+static const int INTENSITY = 5;
+
 static const int animations = 23;
 int (*ijnimations[animations])() = {
 	ijhacklogo, ghost, invader, heart, invadesquid, jumper, ijlogowink, 
@@ -42,7 +44,7 @@ void setup() {
 	 */
 	lc.shutdown(0,false);
 	/* Set the brightness to a medium values */
-	lc.setIntensity(0,15);
+	lc.setIntensity(0,INTENSITY);
 	/* and clear the display */
 	lc.clearDisplay(0);
 	/* setup pins */
@@ -68,14 +70,10 @@ void loop() {
 }
 
 int render(const byte* frame, long delaytime) {
-	lc.setColumn(0,0,frame[7]);
-	lc.setColumn(0,1,frame[6]);
-	lc.setColumn(0,2,frame[5]);
-	lc.setColumn(0,3,frame[4]);
-	lc.setColumn(0,4,frame[3]);
-	lc.setColumn(0,5,frame[2]);
-	lc.setColumn(0,6,frame[1]);
-	lc.setColumn(0,7,frame[0]);
+        // render to screen
+        for (int r = 0; r < 8; r++) {
+          lc.setColumn(0, 7-r, pgm_read_byte(&frame[r]));
+        }
 
 	unsigned long startTime = millis();
 	while ((startTime + delaytime) > millis()){
