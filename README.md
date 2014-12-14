@@ -9,7 +9,7 @@ http://ijhack.nl/project/ijduino
 
 https://pad.ijhack.nl/p/ijduino
 
-https://pad.ijhack.nl/p/20-projects-20-euro
+https://github.com/IJHack/ijduino/blob/master/documentation/ijduino.pdf?raw=true
 
 Installing
 ----------

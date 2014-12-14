@@ -1,6 +1,6 @@
 
 #include "LedControl.h"
-const int BUTTON_PIN = 4;
+const int BUTTON_PIN = 9;
 
 
 //#define POTPIN A0 // Potentiometer
@@ -128,7 +128,11 @@ byte six[] = {
 };
 
 
-LedControl lc = LedControl(13, 11, 12, 1);
+static const int DATA_PIN = 20;
+static const int CLK_PIN  = 5;
+static const int CS_PIN   = 21;
+
+LedControl lc=LedControl(DATA_PIN, CLK_PIN, CS_PIN, 1);
 
 void setSprite(byte *sprite) {
   for (int r = 0; r < 8; r++) {
@@ -262,7 +266,7 @@ void randomdice() {
     // lc.clearDisplay(0);
   }
   if (randNumber == 5)
-  {
+  { 
     Serial.println("55");
     setSprite(five);
     // delay(500);
