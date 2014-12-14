@@ -32,6 +32,8 @@ LedControl lc=LedControl(DATA_PIN, CLK_PIN, CS_PIN, DISPLAYS);
 // byte screen[DISPLAYS][8];
 byte screen[8];
 
+const byte* menuscreen[5][8] = {ij, h, a, c, k};
+
 // basic startup
 int lastButtonState = LOW;   /* the previous reading from the input pin */
 unsigned long lastDebounceTime = 0;   /* the last time the output pin was toggled */
@@ -39,6 +41,7 @@ unsigned long debounceDelay = 50;     /* the debounce time; increase if the outp
 int animation = 0;
 int animations = 0;
 int buttonState = LOW;
+int shift = 0;
 
 void setup() {
 	/*
@@ -73,7 +76,10 @@ void loop() {
 }
 
 void moveleft() {
-  
+  shift++;
+  if (shift > 7) {
+   shift = 0;
+  } 
 }
 
 void load(const byte* frame) {

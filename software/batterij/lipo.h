@@ -1,4 +1,4 @@
-const byte lipo1[8] = {
+const byte lipo1[8] PROGMEM = {
     B00111100, 
     B01000010, 
     B01000010, 
@@ -9,7 +9,7 @@ const byte lipo1[8] = {
     B01111110
   };
 
-  const byte lipo2[8] = {
+  const byte lipo2[8] PROGMEM = {
     B00111100, 
     B01000010, 
     B01000010, 
@@ -19,7 +19,7 @@ const byte lipo1[8] = {
     B01111110, 
   };
 
-  const byte lipo3[8] = {
+  const byte lipo3[8] PROGMEM = {
     B00111100, 
     B01000010, 
     B01000010, 
@@ -30,7 +30,7 @@ const byte lipo1[8] = {
     B01111110
   };
 
-  const byte lipo4[8] = {
+  const byte lipo4[8] PROGMEM = {
     B00111100, 
     B01000010, 
     B01000010, 
@@ -41,7 +41,7 @@ const byte lipo1[8] = {
     B01111110
   };
 
-  const byte lipo5[8] = {
+  const byte lipo5[8] PROGMEM = {
     B00111100, 
     B01000010, 
     B01000010, 
@@ -52,7 +52,7 @@ const byte lipo1[8] = {
     B01111110
   };
 
-  const byte lipo6[8] = {
+  const byte lipo6[8] PROGMEM = {
     B00111100, 
     B01000010, 
     B01111110, 
@@ -63,7 +63,7 @@ const byte lipo1[8] = {
     B01111110
   };
 
-  const byte lipo7[8] = {
+  const byte lipo7[8] PROGMEM = {
     B00111100, 
     B01111110, 
     B01111110, 
