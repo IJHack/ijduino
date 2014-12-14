@@ -16,6 +16,9 @@
 *
 */
 
+static const int DATA_PIN = 20;
+static const int CLK_PIN  = 5;
+static const int CS_PIN   = 21;
 
 #include "LedControl.h"
 #include "Timer.h"
@@ -101,7 +104,7 @@ byte G[] = {
 };
 Timer timer;
 
-LedControl lc = LedControl(13, 11, 12, 1);
+LedControl lc=LedControl(DATA_PIN, CLK_PIN, CS_PIN, 1);
 
 byte direction; // Wind rose, 0 is north
 int xball;
