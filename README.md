@@ -25,13 +25,12 @@ sudo cat hardware/boards.txt >> /usr/share/arduino/hardware/arduino/boards.txt
 USB-ASP Programmer
 ------------------
 
-You probably need to add a udev rule to get this working. Place the following at /etc/udev/rules.d/99-usbasp.rules
+You probably need to add a udev rule to get this working. Place the following at `/etc/udev/rules.d/99-usbasp.rules`
 
-
+```
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="05dc", GROUP="users", MODE="0666"
-
-
-Then run udevadm trigger to reload the udev rules.
+```
+Then run `udevadm trigger` to reload the udev rules.
 
 
 Creating Animations
