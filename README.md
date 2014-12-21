@@ -17,8 +17,11 @@ Installing
 Create a folder "ijduino" in the "variants" folder of the Arduino IDE and copy the file "pins_arduino.h" from the "hardware" folder there.
 
 Add the text from the "boards.txt" file in the "hardware" folder to the "boards.txt" file in the Arduino IDE.
-
-
+```
+sudo mkdir /usr/share/arduino/hardware/arduino/variants/ijduino
+sudo cp hardware/pins_arduino.h /usr/share/arduino/hardware/arduino/variants/ijduino/
+sudo cat hardware/boards.txt >> /usr/share/arduino/hardware/arduino/boards.txt
+```
 USB-ASP Programmer
 ------------------
 
