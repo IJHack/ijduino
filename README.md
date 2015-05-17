@@ -23,6 +23,12 @@ sudo cp hardware/ijhack/avr/variants/ijduino/pins_arduino.h /usr/share/arduino/h
 sudo cat hardware/ijhack/avr/boards.txt >> /usr/share/arduino/hardware/arduino/avr/boards.txt
 ```
 
+On Mac OS X just copy into the Application folder:
+```
+cp -r hardware/ijhack /Applications/Arduino.app/Contents/Java/hardware
+```
+
+
 USB-ASP Programmer
 ------------------
 
