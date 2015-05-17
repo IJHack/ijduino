@@ -18,9 +18,9 @@ Create a folder "ijduino" in the "variants" folder of the Arduino IDE and copy t
 
 Add the text from the "boards.txt" file in the "hardware" folder to the "boards.txt" file in the Arduino IDE.
 ```
-sudo mkdir /usr/share/arduino/hardware/arduino/variants/ijduino
-sudo cp hardware/pins_arduino.h /usr/share/arduino/hardware/arduino/variants/ijduino/
-sudo cat hardware/boards.txt >> /usr/share/arduino/hardware/arduino/boards.txt
+sudo mkdir /usr/share/arduino/hardware/arduino/avr/variants/ijduino
+sudo cp hardware/pins_arduino.h /usr/share/arduino/hardware/arduino/avr/variants/ijduino/
+sudo cat hardware/boards.txt >> /usr/share/arduino/hardware/arduino/avr/boards.txt
 ```
 USB-ASP Programmer
 ------------------

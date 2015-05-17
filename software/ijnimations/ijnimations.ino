@@ -23,12 +23,12 @@ static const int buttonPin = 9;           /* choose the input pin for the pushbu
 
 static const int INTENSITY = 5;
 
-static const int animations = 23;
+static const int animations = 24;
 int (*ijnimations[animations])() = {
 	ijhacklogo, ghost, invader, heart, invadesquid, jumper, ijlogowink, 
 	heartbeat, eq, invaderagain, pong, snake, arrows, directions,
 	packman, diagonals, waterdrip, aliens, blockanim, pulse, tewdoodles,
-	battery, xmastree
+	battery, xmastree, sproet
 };
 
 int lastButtonState = LOW;   /* the previous reading from the input pin */

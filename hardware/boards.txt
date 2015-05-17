@@ -19,3 +19,6 @@ ijduino.build.f_cpu=8000000L
 ijduino.build.core=arduino
 ijduino.build.variant=ijduino
 
+ijduino.bootloader.tool=avrdude
+ijduino.upload.tool=avrdude
+
