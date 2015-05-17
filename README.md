@@ -14,14 +14,15 @@ https://github.com/IJHack/ijduino/blob/master/documentation/ijduino.pdf?raw=true
 Installing
 ----------
 
-Create a folder "ijduino" in the "variants" folder of the Arduino IDE and copy the file "pins_arduino.h" from the "hardware" folder there.
+On most systems, just copy the "hardware" folder into your Arduino folder.
 
-Add the text from the "boards.txt" file in the "hardware" folder to the "boards.txt" file in the Arduino IDE.
+On some picky linux systems you might need to do the following:
 ```
 sudo mkdir /usr/share/arduino/hardware/arduino/avr/variants/ijduino
-sudo cp hardware/pins_arduino.h /usr/share/arduino/hardware/arduino/avr/variants/ijduino/
-sudo cat hardware/boards.txt >> /usr/share/arduino/hardware/arduino/avr/boards.txt
+sudo cp hardware/ijhack/avr/variants/ijduino/pins_arduino.h /usr/share/arduino/hardware/arduino/avr/variants/ijduino/
+sudo cat hardware/ijhack/avr/boards.txt >> /usr/share/arduino/hardware/arduino/avr/boards.txt
 ```
+
 USB-ASP Programmer
 ------------------
 
