@@ -14,7 +14,7 @@ https://github.com/IJHack/ijduino/blob/master/documentation/ijduino.pdf?raw=true
 Installing
 ----------
 
-On most systems, just copy the "hardware" folder into your Arduino folder.
+**On most systems, just copy the "hardware" folder into your Arduino folder.**
 
 On some picky linux systems you might need to do the following:
 ```
