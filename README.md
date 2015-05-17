@@ -14,7 +14,9 @@ https://github.com/IJHack/ijduino/blob/master/documentation/ijduino.pdf?raw=true
 Installing
 ----------
 
-**On most systems, just copy the "hardware" folder into your Arduino folder.**
+**On most systems, just copy the "hardware" and "libraries" folders into your Arduino folder.**
+
+On Windows you can find this folder in the "My Documents" folder. On most unixes in your home folder.
 
 On some picky linux systems you might need to do the following:
 ```
@@ -26,6 +28,7 @@ sudo cat hardware/ijhack/avr/boards.txt >> /usr/share/arduino/hardware/arduino/a
 On Mac OS X just copy into the Application folder:
 ```
 cp -r hardware/ijhack /Applications/Arduino.app/Contents/Java/hardware
+cp -r libraries/* /Applications/Arduino.app/Contents/Java/libraries
 ```
 
 
