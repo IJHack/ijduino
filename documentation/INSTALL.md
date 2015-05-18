@@ -1,28 +1,25 @@
 Installing
 ----------
 
-**On most systems, just copy the "hardware" and "libraries" folders into your Arduino folder.**
+**Just copy the "hardware" and "libraries" folders into your "Arduino" sketches folder.**
 
-On Windows you can find this folder in the "My Documents" folder. On most unixes in your home folder.
-
-On some picky linux systems you might need to do the following:
+On most Linux and BSD this will be in your home folder.
 ```
-sudo mkdir /usr/share/arduino/hardware/arduino/avr/variants/ijduino
-sudo cp hardware/ijhack/avr/variants/ijduino/pins_arduino.h /usr/share/arduino/hardware/arduino/avr/variants/ijduino/
-sudo cat hardware/ijhack/avr/boards.txt >> /usr/share/arduino/hardware/arduino/avr/boards.txt
+cp -r hardware ~/Arduino/
+cp -r libraries ~/Arduino/
 ```
-
-On Mac OS X just copy into the Application folder:
+On Mac OS X it's in the "Documents" folder.
 ```
-cp -r hardware/ijhack /Applications/Arduino.app/Contents/Java/hardware
-cp -r libraries/* /Applications/Arduino.app/Contents/Java/libraries
+cp -r hardware ~/Documents/Arduino/
+cp -r libraries ~/Documents/Arduino/
 ```
-
+On Windows you can find the "Arduino" folder inside your "My Documents" folder. 
 
 USB-ASP Programmer
 ------------------
 
-You probably need to add a udev rule to get this working. Place the following at `/etc/udev/rules.d/99-usbasp.rules`
+On Linux probably need to add a udev rule to get this working. 
+Place the following at `/etc/udev/rules.d/99-usbasp.rules`
 
 ```
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="05dc", GROUP="users", MODE="0666"
