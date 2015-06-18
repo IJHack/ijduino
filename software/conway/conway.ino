@@ -1,7 +1,5 @@
 //Game of Life with MAX7219
 
-// BROKEN SOMEHOW
-
 /*
 
      * dataPin		pin on the Arduino where data gets shifted out
@@ -22,80 +20,58 @@ LedControl lc = LedControl(DATA_PIN, CLK_PIN, CS_PIN, 1);
 
 #define SIZEX 8             //Sets the X axis size
 #define SIZEY 8             //Sets the Y axis size
-#define reseedrate 30       //Sets the rate the world is re-seeded
+#define reseedrate 100       //Sets the rate the world is re-seeded
 #define brightness 15       //Values from 1 to 15 to set the brightness
 long density = 35;          //Sets density % during seeding
 unsigned long delaytime = 150; //Sets the time each generation is shown
 int generation = 0;         //Counter for re-seeding
 int analogPin = 0;          //analogPin for the random seed data
+bool stable = true;
 
-unsigned char world1[8][8] = {
-  {0, 0, 0, 1, 0, 0, 0, 0},
-  {0, 0, 1, 0, 1, 0, 0, 0},
-  {0, 1, 0, 1, 1, 0, 0, 0},
-  {1, 0, 1, 0, 0, 1, 1, 0},
-  {0, 1, 1, 0, 0, 1, 0, 1},
-  {0, 0, 0, 1, 1, 0, 1, 0},
-  {0, 0, 0, 1, 0, 1, 0, 0},
-  {0, 0, 0, 0, 1, 0, 0, 0}
-};
+unsigned char world1[8][8];
 unsigned char world2[8][8];
 
-/*******************************************************************************/
-/* display cells */
 
-void display_cells(unsigned char world1[8][8])
+/*******************************************************************************/
+/* randomize */
+
+void seedWorld(unsigned char world1[8][8])
 {
   int i, j;
   for (i = 0; i < SIZEX; i++)
   {
     for (j = 0; j < SIZEY; j++)
     {
-      lc.setLed(0, i, j, world1[i][j]);
-
+      if (random(100) < density); {
+        world1[i][j] = random(2);
+      }
     }
   }
 }
 
 /*******************************************************************************/
-/* compute previous generation*/
 
-void previous_generation(unsigned char world1[8][8], unsigned char world2[8][8])
+void setup() {
+  lc.shutdown(0, false);
+  lc.setIntensity(0, brightness);
+  lc.clearDisplay(0);
+  randomSeed(analogRead(analogPin));
+  seedWorld(world1);
+}
+
+/*******************************************************************************/
+
+void loop()
 {
-  int i, j;
 
-  for (i = 0; i < SIZEX; i++)
+  if (stable || generation++ > reseedrate)
   {
-    for (j = 0; j < SIZEY; j++)
-    {
-      world2[i][j] = world1[i][j];
-    }
+    delay(1000);
+    seedWorld(world1);
+    lc.clearDisplay(0);
+    delay(300);
+    generation = 0;
   }
-}
-
-/*******************************************************************************/
-/* compute next generation */
-
-void next_generation(unsigned char world1[8][8], unsigned char world2[8][8])
-{
-  int i, j;
-
-  for (i = 0; i < SIZEX; i++)
-  {
-    for (j = 0; j < SIZEY; j++)
-    {
-      world1[i][j] = world2[i][j];
-    }
-  }
-}
-
-
-/*******************************************************************************/
-/* compute neighboring cells */
-
-void neighbours(unsigned char world1[8][8], unsigned char world2[8][8])
-{
-  int a = 0;
 
   for (int i = 0; i < SIZEX; i++)
   {
@@ -106,7 +82,7 @@ void neighbours(unsigned char world1[8][8], unsigned char world2[8][8])
     {
       int left = (j + SIZEY - 1) % SIZEY;
       int right = (j + 1) % SIZEY;
-
+      int a = 0;
       a += world1[above][left];
       a += world1[above][j];
       a += world1[above][right];
@@ -127,53 +103,21 @@ void neighbours(unsigned char world1[8][8], unsigned char world2[8][8])
       }
     }
   }
-}
-
-/*******************************************************************************/
-/* randomize */
-
-void seedWorld(unsigned char world1[8][8])
-{
-  int i, j;
-  randomSeed(analogRead(analogPin));
-  for (i = 0; i < SIZEX; i++)
+  stable = true;
+  for (int i = 0; i < SIZEX; i++)
   {
-    for (j = 0; j < SIZEY; j++)
+    int r = 0;
+    for (int j = 0; j < SIZEY; j++)
     {
-      if (random(100) < density); {
-        world1[i][j] = random(2);
+      if (world1[i][j] != world2[i][j])
+      {
+        stable = false;
+        world1[i][j] = world2[i][j];
       }
+      r = (r << 1) | world2[i][j];
     }
-  }
-}
-
-/*******************************************************************************/
-
-void setup() {
-  lc.shutdown(0, false);
-  lc.setIntensity(0, brightness);
-  lc.clearDisplay(0);
-  seedWorld(world1);
-}
-
-/*******************************************************************************/
-
-void loop()
-{
-
-  if (generation++ > reseedrate)
-  {
-    seedWorld(world1);
-    lc.clearDisplay(0);
-    delay(300);
-    generation = 0;
+    lc.setColumn(0, i, r);
   }
 
-  previous_generation(world1, world2);
-  neighbours(world1, world2);
-  next_generation(world1, world2);
-  display_cells(world1);
   delay(delaytime);
-
-
 }
