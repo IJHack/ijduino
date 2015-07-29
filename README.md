@@ -42,4 +42,4 @@ Then run `udevadm trigger` to reload the udev rules.
 
 Creating Animations
 -------------------
-http://ijhack.nl/en/page/led-matrix-generator
+http://ijhack.nl/page/led-matrix-generator
